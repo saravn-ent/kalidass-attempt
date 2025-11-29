@@ -190,16 +190,16 @@ const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
           </div>
 
           <!-- Mobile Controls -->
-          <div class="flex items-center gap-4 md:hidden">
+          <div class="flex items-center gap-20 md:hidden">
             <!-- Language Toggle (Mobile) -->
             <button 
               id="lang-toggle-mobile" 
-              class="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-gray-200 active:bg-gray-50"
+              class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-red-100 bg-red-50 text-red-700 active:bg-red-100 transition-colors shadow-sm"
               aria-label="Switch Language"
             >
-              <span class="text-xs font-bold text-gray-800 lang-en">தமிழ்</span>
-              <span class="text-xs font-bold text-gray-800 lang-ta hidden">ENG</span>
-              <i class="fa-solid fa-language text-gray-500 text-sm"></i>
+              <span class="text-xs font-bold lang-en">தமிழ்</span>
+              <span class="text-xs font-bold lang-ta hidden">ENG</span>
+              <i class="fa-solid fa-language text-red-500 text-sm"></i>
             </button>
 
             <!-- Mobile Menu Button -->
@@ -284,9 +284,9 @@ const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
           <!-- Proprietor Card -->
           <div class="pt-6 pb-4 text-center">
             <div class="relative mx-auto w-32 h-40 mb-3 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-              <img src="https://placehold.co/400x600?text=Kalidass+Travels" alt="Proprietor" class="w-full h-full object-cover" />
+              <img src="https://placehold.co/400x600?text=Mani+Perumal" alt="Proprietor" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1">Kalidass</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Mani Perumal</h3>
             <p class="text-xs tracking-[0.2em] text-gray-500 uppercase font-semibold">PROPRIETOR</p>
           </div>
         </div>
@@ -326,10 +326,10 @@ const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
           <!-- Copyright -->
           <p class="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} <span class="text-white font-bold">KALIDASS TRAVELS</span> | ALL RIGHTS RESERVED
+            &copy; {new Date().getFullYear()} Kalidass Travels | All rights reserved.
           </p>
           <p class="text-sm text-gray-400 mt-1">
-            Built by <span class="text-white font-bold">Saravn</span>
+            Built by <a href="https://wa.me/919952749408" target="_blank" class="font-bold bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent hover:opacity-80 transition-opacity">Saravn</a>
           </p>
 
         </div>
