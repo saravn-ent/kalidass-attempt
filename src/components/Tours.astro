@@ -3,12 +3,12 @@ import serviceDetails from '../data/serviceDetails.json';
 
 // 1. Temple Trips (Strictly religious/pilgrimage)
 const templeTripsSlugs = [
-  "tirupati-package",
-  "thiruvannamalai-girivalam-trip",
-  "rameswaram-2-days",
-  "navagraha-tour",
   "sabarimala-trip",
-  "chidambaram-temple-trip"
+  "thiruvannamalai-girivalam-trip",
+  "tirupati-package",
+  "rameswaram-2-days",
+  "chidambaram-temple-trip",
+  "navagraha-tour"
 ];
 
 const templeTrips = serviceDetails.filter(service => templeTripsSlugs.includes(service.slug));

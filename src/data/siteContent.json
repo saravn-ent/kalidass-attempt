@@ -192,11 +192,33 @@
   ],
   "drivers": [
     {
+      "name": "Mani Perumal",
+      "experience": "12 Years Experience",
+      "languages": "Tamil, English",
+      "tag": "Owner",
+      "image": "/images/drivers/mani-perumal.jpg",
+      "name_ta": "Mani Perumal",
+      "experience_ta": "12 Years Experience",
+      "languages_ta": "Tamil, English",
+      "tag_ta": "Owner"
+    },
+    {
+      "name": "Karthik P",
+      "experience": "10 Years Experience",
+      "languages": "Tamil, English, Hindi",
+      "tag": "Managing Partner",
+      "image": "https://placehold.co/400x300/e2e8f0/94a3b8?text=Partner",
+      "name_ta": "Karthik P",
+      "experience_ta": "10 Years Experience",
+      "languages_ta": "Tamil, English, Hindi",
+      "tag_ta": "Managing Partner"
+    },
+    {
       "name": "Hari",
       "experience": "1 Year Experience",
       "languages": "Tamil, English",
       "tag": "Police Verified",
-      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400",
+      "image": "https://placehold.co/400x300/e2e8f0/94a3b8?text=Driver",
       "name_ta": "Hari",
       "experience_ta": "1 Year Experience",
       "languages_ta": "Tamil, English",
@@ -207,33 +229,11 @@
       "experience": "2 Years Experience",
       "languages": "Tamil, English",
       "tag": "Police Verified",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400",
+      "image": "https://placehold.co/400x300/e2e8f0/94a3b8?text=Driver",
       "name_ta": "Raj",
       "experience_ta": "2 Years Experience",
       "languages_ta": "Tamil, English",
       "tag_ta": "Police Verified"
-    },
-    {
-      "name": "Karthik P",
-      "experience": "10 Years Experience",
-      "languages": "Tamil, English, Hindi",
-      "tag": "Top Rated",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400",
-      "name_ta": "Karthik P",
-      "experience_ta": "10 Years Experience",
-      "languages_ta": "Tamil, English, Hindi",
-      "tag_ta": "Top விலைd"
-    },
-    {
-      "name": "Mani Perumal",
-      "experience": "12 Years Experience",
-      "languages": "Tamil, English",
-      "tag": "Owner",
-      "image": "/images/mani-perumal.jpg",
-      "name_ta": "Mani Perumal",
-      "experience_ta": "12 Years Experience",
-      "languages_ta": "Tamil, English",
-      "tag_ta": "Owner"
     }
   ],
   "reviews": [

@@ -1097,53 +1097,105 @@
     "category": "Temple Tours",
     "title": "Tirupati Balaji Darshan Package",
     "overview": "Complete darshan package with accommodation assistance and guided darshan.",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Early morning pickup (4:00 AM)"
+      },
+      {
+        "stop": "Tiruttani",
+        "desc": "Breakfast Stop"
+      },
+      {
+        "stop": "Tirupati",
+        "desc": "Alipiri Checkpost & Security Check"
+      },
+      {
+        "stop": "Tirumala",
+        "desc": "Darshan & Laddu Prasadam"
+      },
+      {
+        "stop": "Chennai",
+        "desc": "Return drop by night"
+      }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Total Fare"
+        "Base Fare",
+        "Driver Bata",
+        "Permit & Toll",
+        "Total Cost"
       ],
       "rows": [
         [
           "Etios/Dzire",
+          "₹4,500",
+          "₹500",
+          "₹1,000",
           "₹6,000"
         ],
         [
           "Innova",
+          "₹6,500",
+          "₹600",
+          "₹1,400",
           "₹8,500"
         ],
         [
           "Crysta",
+          "₹7,500",
+          "₹700",
+          "₹1,800",
           "₹10,000"
         ],
         [
           "Tempo Traveller",
+          "₹9,000",
+          "₹800",
+          "₹2,200",
           "₹12,000"
         ]
       ],
-      "note": "Includes Toll, Parking, Driver Bata, Permit. Excludes Darshan Tickets.",
+      "note": "Total Cost includes: Doorstep Pickup, Permit, Toll, Parking & Driver Bata. Excludes Darshan Tickets.",
       "headers_ta": [
         "வாகனம்",
-        "மொத்த கட்டணம்"
+        "அடிப்படை கட்டணம்",
+        "டிரைவர் பேட்டா",
+        "பர்மிட் & டோல்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "Etios/Dzire",
+          "₹4,500",
+          "₹500",
+          "₹1,000",
           "₹6,000"
         ],
         [
           "இன்னோவா",
+          "₹6,500",
+          "₹600",
+          "₹1,400",
           "₹8,500"
         ],
         [
           "கிறிஸ்டா",
+          "₹7,500",
+          "₹700",
+          "₹1,800",
           "₹10,000"
         ],
         [
           "டெம்போ டிராவலர்",
+          "₹9,000",
+          "₹800",
+          "₹2,200",
           "₹12,000"
         ]
       ],
-      "note_ta": "உள்ளடக்கியவை Toll, Parking, டிரைவர் பேட்டா, Permit. நீக்கப்பட்டவை Darshan Tickets."
+      "note_ta": "Total Cost includes: Doorstep Pickup, Permit, Toll, Parking & Driver Bata. Excludes Darshan Tickets."
     },
     "includes": [
       "Doorstep Pickup & Drop",
@@ -1307,61 +1359,105 @@
     "category": "Temple Tours",
     "title": "Thiruvannamalai Girivalam (1 Day / Night Trip)",
     "overview": "A peaceful spiritual trip for Girivalam or temple darshan.\n\nTrip Info\n- Chennai → Thiruvannamalai → Chennai\n- 250 km approx\n- Popular for Pournami Girivalam",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Pickup from Home / Airport"
+      },
+      {
+        "stop": "Melmaruvathur",
+        "desc": "Adhiparasakthi Temple Darshan (Optional)"
+      },
+      {
+        "stop": "Gingee",
+        "desc": "Scenic Fort View / Tea Break"
+      },
+      {
+        "stop": "Thiruvannamalai",
+        "desc": "Arunachaleswarar Temple & Girivalam Start"
+      },
+      {
+        "stop": "Chennai",
+        "desc": "Return Drop"
+      }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
         "Rate/km",
         "Driver Bata",
-        "Est. Fare"
+        "Toll & Parking",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹14/km",
+          "₹14",
           "₹500",
-          "₹6,200 – ₹6,500"
+          "₹400",
+          "₹6,500"
         ],
         [
           "SUV",
-          "₹17/km",
+          "₹17",
           "₹600",
-          "₹7,500 – ₹8,000"
+          "₹500",
+          "₹7,900"
         ],
         [
-          "Innova/Crysta",
-          "₹20–24/km",
+          "Innova",
+          "₹20",
           "₹700",
-          "₹9,000 – ₹10,500"
+          "₹600",
+          "₹9,300"
+        ],
+        [
+          "Crysta",
+          "₹24",
+          "₹800",
+          "₹700",
+          "₹11,100"
         ]
       ],
-      "note": "Parking & toll extra.",
+      "note": "Total Cost includes: 400km (approx round trip) + Driver Bata + Toll Estimates.",
       "headers_ta": [
         "வாகனம்",
-        "விலை/km",
+        "கி.மீ கட்டணம்",
         "டிரைவர் பேட்டா",
-        "தோராய கட்டணம்"
+        "டோல் & பார்க்கிங்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹14/km",
+          "₹14",
           "₹500",
-          "₹6,200 – ₹6,500"
+          "₹400",
+          "₹6,500"
         ],
         [
           "எஸ்யூவி",
-          "₹17/km",
+          "₹17",
           "₹600",
-          "₹7,500 – ₹8,000"
+          "₹500",
+          "₹7,900"
         ],
         [
-          "இன்னோவா/கிறிஸ்டா",
-          "₹20–24/km",
+          "இன்னோவா",
+          "₹20",
           "₹700",
-          "₹9,000 – ₹10,500"
+          "₹600",
+          "₹9,300"
+        ],
+        [
+          "கிறிஸ்டா",
+          "₹24",
+          "₹800",
+          "₹700",
+          "₹11,100"
         ]
       ],
-      "note_ta": "Parking & toll extra."
+      "note_ta": "Total Cost includes: 400km (approx round trip) + Driver Bata + Toll Estimates."
     },
     "notes": [
       "Note: Night Girivalam requires alert drivers. We assign our most experienced night-route drivers."
@@ -1398,53 +1494,105 @@
     "category": "Temple Tours",
     "title": "Chidambaram Natarajar Temple Trip",
     "overview": "A spiritually rich trip with a relaxed journey.",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Pickup from Home / Airport"
+      },
+      {
+        "stop": "Pondicherry",
+        "desc": "Breakfast / Manakula Vinayagar Temple"
+      },
+      {
+        "stop": "Cuddalore",
+        "desc": "Scenic Coastal Drive"
+      },
+      {
+        "stop": "Chidambaram",
+        "desc": "Thillai Natarajar Temple Darshan"
+      },
+      {
+        "stop": "Pichavaram",
+        "desc": "Mangrove Forest Boat Ride (Optional)"
+      }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Est. Fare"
+        "Rate/km",
+        "Driver Bata",
+        "Toll & Parking",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹6,500 – ₹7,000"
+          "₹14",
+          "₹500",
+          "₹600",
+          "₹7,400"
         ],
         [
           "SUV",
-          "₹8,500 – ₹9,000"
+          "₹17",
+          "₹600",
+          "₹700",
+          "₹9,000"
         ],
         [
           "Innova",
-          "₹10,500 – ₹11,500"
+          "₹20",
+          "₹700",
+          "₹800",
+          "₹10,500"
         ],
         [
           "Crysta",
-          "₹12,500 – ₹13,500"
+          "₹24",
+          "₹800",
+          "₹900",
+          "₹12,500"
         ]
       ],
-      "note": "Why the range? Transparent — depends on: actual km, route chosen, toll count",
+      "note": "Total Cost includes: 450km (approx round trip) + Driver Bata + Toll Estimates.",
       "headers_ta": [
         "வாகனம்",
-        "தோராய கட்டணம்"
+        "கி.மீ கட்டணம்",
+        "டிரைவர் பேட்டா",
+        "டோல் & பார்க்கிங்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹6,500 – ₹7,000"
+          "₹14",
+          "₹500",
+          "₹600",
+          "₹7,400"
         ],
         [
           "எஸ்யூவி",
-          "₹8,500 – ₹9,000"
+          "₹17",
+          "₹600",
+          "₹700",
+          "₹9,000"
         ],
         [
           "இன்னோவா",
-          "₹10,500 – ₹11,500"
+          "₹20",
+          "₹700",
+          "₹800",
+          "₹10,500"
         ],
         [
           "கிறிஸ்டா",
-          "₹12,500 – ₹13,500"
+          "₹24",
+          "₹800",
+          "₹900",
+          "₹12,500"
         ]
       ],
-      "note_ta": "Why the range? Transparent — depends on: actual km, route chosen, toll count"
+      "note_ta": "Total Cost includes: 450km (approx round trip) + Driver Bata + Toll Estimates."
     },
     "travelGuide": {
       "history": "Chidambaram Thillai Nataraja Temple represents the Sky element (Akasha Lingam). It is famous for the 'Chidambara Rahasiyam' and the cosmic dance of Lord Shiva.",
@@ -1467,61 +1615,119 @@
     "category": "Temple Tours",
     "title": "Rameswaram (2-Day Trip)",
     "overview": "Long, peaceful coastal travel. Suitable for families & senior devotees.",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Early Morning Departure"
+      },
+      {
+        "stop": "Trichy",
+        "desc": "Srirangam Temple Darshan (Optional)"
+      },
+      {
+        "stop": "Madurai",
+        "desc": "Meenakshi Amman Temple (Evening)"
+      },
+      {
+        "stop": "Rameswaram",
+        "desc": "Ramanathaswamy Temple & 22 Wells Bath"
+      },
+      {
+        "stop": "Dhanushkodi",
+        "desc": "Ghost Town & Ram Setu Point"
+      }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Estimated Total"
+        "Rate/km",
+        "Driver Bata",
+        "Toll & Parking",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹17,500 – ₹18,500"
+          "₹11",
+          "₹400/day",
+          "₹1,500",
+          "₹15,500"
         ],
         [
           "SUV",
-          "₹21,000 – ₹22,500"
+          "₹13",
+          "₹500/day",
+          "₹1,800",
+          "₹18,400"
         ],
         [
           "Innova",
-          "₹24,500 – ₹26,000"
+          "₹16",
+          "₹600/day",
+          "₹2,200",
+          "₹22,600"
         ],
         [
           "Crysta",
-          "₹28,000 – ₹30,000"
+          "₹19",
+          "₹700/day",
+          "₹2,500",
+          "₹26,700"
         ],
         [
           "Tempo Traveller",
-          "₹32,000 – ₹35,000"
+          "₹23",
+          "₹800/day",
+          "₹3,000",
+          "₹32,200"
         ]
       ],
-      "note": "Includes 2-day driver bata. Toll/Parking extra.",
+      "note": "Total Cost includes: 1200km (approx round trip) + 2 Days Bata + Toll Estimates.",
       "headers_ta": [
         "வாகனம்",
-        "தோராய மொத்தம்"
+        "கி.மீ கட்டணம்",
+        "டிரைவர் பேட்டா",
+        "டோல் & பார்க்கிங்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹17,500 – ₹18,500"
+          "₹11",
+          "₹400/day",
+          "₹1,500",
+          "₹15,500"
         ],
         [
           "எஸ்யூவி",
-          "₹21,000 – ₹22,500"
+          "₹13",
+          "₹500/day",
+          "₹1,800",
+          "₹18,400"
         ],
         [
           "இன்னோவா",
-          "₹24,500 – ₹26,000"
+          "₹16",
+          "₹600/day",
+          "₹2,200",
+          "₹22,600"
         ],
         [
           "கிறிஸ்டா",
-          "₹28,000 – ₹30,000"
+          "₹19",
+          "₹700/day",
+          "₹2,500",
+          "₹26,700"
         ],
         [
           "டெம்போ டிராவலர்",
-          "₹32,000 – ₹35,000"
+          "₹23",
+          "₹800/day",
+          "₹3,000",
+          "₹32,200"
         ]
       ],
-      "note_ta": "உள்ளடக்கியவை 2-day driver bata. Toll/Parking extra."
+      "note_ta": "Total Cost includes: 1200km (approx round trip) + 2 Days Bata + Toll Estimates."
     },
     "faq": [
       {
@@ -1552,81 +1758,105 @@
     "category": "Temple Tours",
     "title": "Navagraha Temple Tour (1 Day or 2 Days)",
     "overview": "A complete spiritual journey covering the nine planetary temples (Navagrahas) around Kumbakonam. This trip is designed to help you complete your pariharams and prayers with peace of mind.",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Departure to Kumbakonam"
+      },
+      {
+        "stop": "Kumbakonam",
+        "desc": "Base Camp for Navagraha Temples"
+      },
+      {
+        "stop": "Suryanar & Thingaloor",
+        "desc": "Sun & Moon Temples"
+      },
+      {
+        "stop": "Vaitheeswaran & Thirunallar",
+        "desc": "Mars & Saturn Temples"
+      },
+      {
+        "stop": "Alangudi & Others",
+        "desc": "Guru & Remaining Temples"
+      }
+    ],
     "tariff": {
       "headers": [
-        "Duration",
         "Vehicle",
-        "Est. Fare"
+        "Rate/km",
+        "Driver Bata",
+        "Toll & Parking",
+        "Total Cost"
       ],
       "rows": [
         [
-          "1-Day Trip (~350–400 km)",
           "Sedan",
-          "₹7,500 – ₹8,200"
+          "₹11",
+          "₹400/day",
+          "₹1,000",
+          "₹8,600"
         ],
         [
-          "1-Day Trip (~350–400 km)",
           "SUV",
-          "₹9,500 – ₹10,500"
+          "₹13",
+          "₹500/day",
+          "₹1,200",
+          "₹10,600"
         ],
         [
-          "1-Day Trip (~350–400 km)",
           "Innova",
-          "₹11,500 – ₹12,500"
+          "₹16",
+          "₹600/day",
+          "₹1,500",
+          "₹13,100"
         ],
         [
-          "2-Day Trip (~600–650 km)",
-          "Sedan",
-          "₹11,500 – ₹12,500"
-        ],
-        [
-          "2-Day Trip (~600–650 km)",
-          "SUV",
-          "₹14,500 – ₹15,500"
-        ],
-        [
-          "2-Day Trip (~600–650 km)",
-          "Innova",
-          "₹17,500 – ₹19,000"
+          "Crysta",
+          "₹19",
+          "₹700/day",
+          "₹1,800",
+          "₹15,500"
         ]
       ],
+      "note": "Total Cost includes: 650km (approx round trip) + 2 Days Bata + Toll Estimates.",
       "headers_ta": [
-        "கால அளவு",
         "வாகனம்",
-        "தோராய கட்டணம்"
+        "கி.மீ கட்டணம்",
+        "டிரைவர் பேட்டா",
+        "டோல் & பார்க்கிங்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
-          "1-Day Trip (~350–400 km)",
           "செடான்",
-          "₹7,500 – ₹8,200"
+          "₹11",
+          "₹400/day",
+          "₹1,000",
+          "₹8,600"
         ],
         [
-          "1-Day Trip (~350–400 km)",
           "எஸ்யூவி",
-          "₹9,500 – ₹10,500"
+          "₹13",
+          "₹500/day",
+          "₹1,200",
+          "₹10,600"
         ],
         [
-          "1-Day Trip (~350–400 km)",
           "இன்னோவா",
-          "₹11,500 – ₹12,500"
+          "₹16",
+          "₹600/day",
+          "₹1,500",
+          "₹13,100"
         ],
         [
-          "2-Day Trip (~600–650 km)",
-          "செடான்",
-          "₹11,500 – ₹12,500"
-        ],
-        [
-          "2-Day Trip (~600–650 km)",
-          "எஸ்யூவி",
-          "₹14,500 – ₹15,500"
-        ],
-        [
-          "2-Day Trip (~600–650 km)",
-          "இன்னோவா",
-          "₹17,500 – ₹19,000"
+          "கிறிஸ்டா",
+          "₹19",
+          "₹700/day",
+          "₹1,800",
+          "₹15,500"
         ]
-      ]
+      ],
+      "note_ta": "Total Cost includes: 650km (approx round trip) + 2 Days Bata + Toll Estimates."
     },
     "includes": [
       "Experienced driver familiar with temple routes",
@@ -1671,116 +1901,264 @@
   {
     "slug": "sabarimala-trip",
     "category": "Temple Tours",
-    "title": "Sabarimala Trip (Season Service)",
-    "overview": "High-demand route — safety and comfort first.",
+    "title": "Sabarimala Yatra 2025-26 (Chennai to Pamba)",
+    "duration": "3 Days / 2 Nights",
+    "overview": "A sacred journey to the abode of Lord Ayyappa. We understand the sanctity of the 41-day Vratham and ensure our drivers respect the spiritual atmosphere of your trip. Our vehicles are cleaned and prepared for the pilgrimage.",
+    "routePlan": [
+      {
+        "stop": "Chennai",
+        "desc": "Start early morning with prayers"
+      },
+      {
+        "stop": "Trichy / Samayapuram",
+        "desc": "Satvik Breakfast / Darshan"
+      },
+      {
+        "stop": "Kumily",
+        "desc": "Gateway to Kerala (Forest Check Post)"
+      },
+      {
+        "stop": "Nilakkal",
+        "desc": "Base Camp (Parking & Cloak Room)"
+      },
+      {
+        "stop": "Pamba",
+        "desc": "Holy River Bath & Trek Start"
+      }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Total Estimate"
+        "Rate / km",
+        "Driver Bata",
+        "State Permit",
+        "Total Cost"
       ],
       "rows": [
         [
-          "Sedan",
-          "₹12,000 – ₹14,000"
+          "Sedan (Dzire/Etios)",
+          "₹11",
+          "₹400/day",
+          "₹400",
+          "₹15,900"
         ],
         [
-          "SUV",
-          "₹16,000 – ₹18,000"
+          "SUV (Ertiga/XL6)",
+          "₹13",
+          "₹500/day",
+          "₹500",
+          "₹18,900"
         ],
         [
-          "Innova/Crysta",
-          "₹20,000 – ₹24,000"
+          "Innova",
+          "₹16",
+          "₹600/day",
+          "₹700",
+          "₹23,300"
+        ],
+        [
+          "Innova Crysta",
+          "₹19",
+          "₹700/day",
+          "₹800",
+          "₹27,600"
         ],
         [
           "Tempo Traveller",
-          "₹28,000 – ₹35,000"
+          "₹23",
+          "₹800/day",
+          "₹2,500",
+          "₹34,800"
         ]
       ],
-      "note": "Includes multiple driver bata days.",
+      "note": "Total Cost includes: 1300km (approx round trip) + 3 Days Bata + State Permit. Toll & Parking extra.",
       "headers_ta": [
         "வாகனம்",
-        "Total Estimate"
+        "கி.மீ கட்டணம்",
+        "டிரைவர் பேட்டா",
+        "மாநில பர்மிட்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
-          "செடான்",
-          "₹12,000 – ₹14,000"
+          "செடான் (Dzire/Etios)",
+          "₹11",
+          "₹400/day",
+          "₹400",
+          "₹15,900"
         ],
         [
-          "எஸ்யூவி",
-          "₹16,000 – ₹18,000"
+          "எஸ்யூவி (Ertiga/XL6)",
+          "₹13",
+          "₹500/day",
+          "₹500",
+          "₹18,900"
         ],
         [
-          "இன்னோவா/கிறிஸ்டா",
-          "₹20,000 – ₹24,000"
+          "இன்னோவா",
+          "₹16",
+          "₹600/day",
+          "₹700",
+          "₹23,300"
+        ],
+        [
+          "இன்னோவா கிறிஸ்டா",
+          "₹19",
+          "₹700/day",
+          "₹800",
+          "₹27,600"
         ],
         [
           "டெம்போ டிராவலர்",
-          "₹28,000 – ₹35,000"
+          "₹23",
+          "₹800/day",
+          "₹2,500",
+          "₹34,800"
         ]
       ],
-      "note_ta": "உள்ளடக்கியவை multiple driver bata days."
+      "note_ta": "Total Cost includes: 1300km (approx round trip) + 3 Days Bata + State Permit. Toll & Parking extra."
     },
+    "includes": [
+      "Clean, Sanitized Vehicle",
+      "Experienced Hill Driver",
+      "Stops at Pure Veg Restaurants",
+      "Audio System for Ayyappa Songs"
+    ],
+    "excludes": [
+      "Toll & Parking",
+      "Food & Accommodation"
+    ],
     "travelGuide": {
-      "history": "Sabarimala is the abode of Lord Ayyappa. It is located in the Periyar Tiger Reserve. The pilgrimage involves a rigorous 41-day Vratham (fasting).",
-      "timings": "Open only during Mandala Pooja (Nov-Dec), Makaravilakku (Jan), and first 5 days of every Malayalam month.",
-      "dressCode": "Black or Blue clothes (Ayyappa devotees). Irumudi Kettu is mandatory for 18 steps.",
+      "history": "The Sabarimala pilgrimage is a test of endurance and devotion. It is located in the Periyar Tiger Reserve, emphasizing the harmony between divinity and nature.",
+      "timings": "Mandala Pooja: Nov 16 - Dec 27, 2025\nMakaravilakku: Dec 30, 2025 - Jan 15, 2026",
+      "dressCode": "Black/Blue/Saffron clothes. Irumudi Kettu is mandatory for climbing the Pathinettam Padi (18 Steps).",
       "tips": [
-        "Carry original ID proof for Virtual Q verification.",
-        "Plastic is strictly banned in Sabarimala.",
-        "Be prepared for long trekking (Pamba to Sannidhanam).",
-        "Doli service is available for elderly people."
+        "**Green Sabarimala:** Strictly NO PLASTIC. Carry water in steel/copper bottles.",
+        "**Holy Pamba:** Dip for purification only. Do not use soap, oil, or discard clothes in the river.",
+        "**Forest Protection:** We travel through a Tiger Reserve. Do not feed animals or litter food waste.",
+        "**Virtual Q:** Mandatory booking required for Darshan. Carry printed copy & ID."
       ]
     },
-    "whatsappMsg": "Hi, I would like to book the Sabarimala Trip.",
-    "title_ta": "சபரிமலை Trip (Season சேவை)",
+    "whatsappMsg": "Hi, I want to book a Sabarimala trip.",
+    "title_ta": "சபரிமலை யாத்திரை 2025-26 (சென்னையிலிருந்து பம்பை)",
     "category_ta": "கோவில் சுற்றுலா",
-    "overview_ta": "High-demand route — safety and comfort first."
+    "overview_ta": "Complete pilgrimage package from Chennai to Sabarimala (Pamba). We provide experienced drivers familiar with the ghat roads and Kerala permit regulations. \n\n**Season:** Mandala Pooja & Makaravilakku (Nov 2025 - Jan 2026).\n**Route:** Chennai → Trichy → Kumily → Nilakkal/Pamba.",
+    "includes_ta": [
+      "Clean, Sanitized Vehicle",
+      "Experienced Hill Driver",
+      "24/7 Support",
+      "Audio System for Devotional Songs"
+    ],
+    "excludes_ta": [
+      "Kerala State Permit (Payable at border)",
+      "Toll & Parking",
+      "Food & Accommodation"
+    ]
   },
   {
     "slug": "pondicherry-one-day-trip",
     "category": "Misc Services",
     "title": "Pondicherry Day Trip",
     "overview": "Escape to the French Riviera of the East. Visit the serene Auroville, the beautiful Promenade Beach, Manakula Vinayagar Temple, and the French Colony. Perfect for a one-day getaway with family or friends.",
+    "routePlan": [
+      { "stop": "Chennai Start", "desc": "Early morning pickup (6:00 AM recommended)." },
+      { "stop": "Auroville", "desc": "Visit the Matrimandir viewing point and global township." },
+      { "stop": "Aurobindo Ashram", "desc": "Spiritual pause at the famous ashram." },
+      { "stop": "Manakula Vinayagar", "desc": "Blessings at the ancient Ganesha temple." },
+      { "stop": "Promenade Beach", "desc": "Relax at the Rock Beach & French Colony walk." },
+      { "stop": "Chennai Drop", "desc": "Return by night (approx 9:00 PM)." }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Total Fare"
+        "Rate/km",
+        "Driver Bata",
+        "Toll/Parking",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹5,500 – ₹6,000"
+          "₹11",
+          "₹500",
+          "₹400",
+          "₹4,500"
         ],
         [
-          "SUV",
-          "₹7,500 – ₹8,200"
+          "SUV (Ertiga)",
+          "₹14",
+          "₹600",
+          "₹400",
+          "₹5,500"
         ],
         [
           "Innova",
-          "₹9,000 – ₹10,000"
+          "₹17",
+          "₹700",
+          "₹400",
+          "₹6,500"
+        ],
+        [
+          "Crysta",
+          "₹20",
+          "₹800",
+          "₹400",
+          "₹7,500"
+        ],
+        [
+          "Tempo Traveller",
+          "₹25",
+          "₹1,000",
+          "₹500",
+          "₹9,500"
         ]
       ],
-      "note": "270 km round trip",
+      "note": "Total Cost includes: 320km (approx round trip) + Driver Bata + Tolls. Extra km charged if exceeded.",
       "headers_ta": [
         "வாகனம்",
-        "மொத்த கட்டணம்"
+        "கி.மீ விலை",
+        "பட்டா",
+        "சுங்கம்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹5,500 – ₹6,000"
+          "₹11",
+          "₹500",
+          "₹400",
+          "₹4,500"
         ],
         [
-          "எஸ்யூவி",
-          "₹7,500 – ₹8,200"
+          "எஸ்யூவி (Ertiga)",
+          "₹14",
+          "₹600",
+          "₹400",
+          "₹5,500"
         ],
         [
           "இன்னோவா",
-          "₹9,000 – ₹10,000"
+          "₹17",
+          "₹700",
+          "₹400",
+          "₹6,500"
+        ],
+        [
+          "கிறிஸ்டா",
+          "₹20",
+          "₹800",
+          "₹400",
+          "₹7,500"
+        ],
+        [
+          "டெம்போ டிராவலர்",
+          "₹25",
+          "₹1,000",
+          "₹500",
+          "₹9,500"
         ]
       ],
-      "note_ta": "270 km round trip"
+      "note_ta": "மொத்த செலவில் 320 கி.மீ + டிரைவர் பேட்டா + டோல் கட்டணம் அடங்கும்."
     },
     "includes": [
       "Sightseeing at major spots",
@@ -1813,45 +2191,104 @@
     "category": "Temple Tours",
     "title": "Vellore Golden Temple Trip",
     "overview": "Visit the magnificent Sripuram Golden Temple, covered in 1500 kg of pure gold. A spiritual marvel located in Vellore, ideal for a day trip from Chennai.",
+    "routePlan": [
+      { "stop": "Chennai Start", "desc": "Pickup at 7:00 AM." },
+      { "stop": "Vellore Fort", "desc": "Visit the historic 16th-century fort." },
+      { "stop": "Jalakandeswarar", "desc": "Darshan at the fort temple." },
+      { "stop": "Golden Temple", "desc": "Sripuram Golden Temple (Evening Darshan is best)." },
+      { "stop": "Chennai Drop", "desc": "Return by 10:00 PM." }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Fare"
+        "Rate/km",
+        "Driver Bata",
+        "Toll/Parking",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹4,500 – ₹5,000"
+          "₹11",
+          "₹500",
+          "₹400",
+          "₹4,200"
         ],
         [
-          "SUV",
-          "₹6,000 – ₹6,500"
+          "SUV (Ertiga)",
+          "₹14",
+          "₹600",
+          "₹400",
+          "₹5,200"
         ],
         [
           "Innova",
-          "₹7,500 – ₹8,200"
+          "₹17",
+          "₹700",
+          "₹400",
+          "₹6,200"
+        ],
+        [
+          "Crysta",
+          "₹20",
+          "₹800",
+          "₹400",
+          "₹7,200"
+        ],
+        [
+          "Tempo Traveller",
+          "₹25",
+          "₹1,000",
+          "₹500",
+          "₹9,000"
         ]
       ],
-      "note": "260 km approx",
+      "note": "Total Cost includes: 300km (approx round trip) + Driver Bata + Tolls.",
       "headers_ta": [
         "வாகனம்",
-        "கட்டணம்"
+        "கி.மீ விலை",
+        "பட்டா",
+        "சுங்கம்",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹4,500 – ₹5,000"
+          "₹11",
+          "₹500",
+          "₹400",
+          "₹4,200"
         ],
         [
-          "எஸ்யூவி",
-          "₹6,000 – ₹6,500"
+          "எஸ்யூவி (Ertiga)",
+          "₹14",
+          "₹600",
+          "₹400",
+          "₹5,200"
         ],
         [
           "இன்னோவா",
-          "₹7,500 – ₹8,200"
+          "₹17",
+          "₹700",
+          "₹400",
+          "₹6,200"
+        ],
+        [
+          "கிறிஸ்டா",
+          "₹20",
+          "₹800",
+          "₹400",
+          "₹7,200"
+        ],
+        [
+          "டெம்போ டிராவலர்",
+          "₹25",
+          "₹1,000",
+          "₹500",
+          "₹9,000"
         ]
       ],
-      "note_ta": "260 km approx"
+      "note_ta": "மொத்த செலவில் 300 கி.மீ + டிரைவர் பேட்டா + டோல் கட்டணம் அடங்கும்."
     },
     "includes": [
       "Pickup & Drop from Chennai",
@@ -1882,55 +2319,82 @@
   {
     "slug": "mahabalipuram-ecr-temple-route",
     "category": "Temple Tours",
-    "title": "Mahabalipuram & ECR Temples (Half-Day / Full-Day)",
+    "title": "Mahabalipuram & ECR Temples",
     "overview": "Explore the UNESCO World Heritage sites of Mahabalipuram including the Shore Temple, Five Rathas, and Arjuna's Penance. Enjoy a scenic drive along the East Coast Road (ECR) with options to visit other temples en route.",
+    "routePlan": [
+      { "stop": "Chennai Start", "desc": "Pickup at 8:00 AM." },
+      { "stop": "ECR Stops", "desc": "Iskcon, DakshinaChitra, or Crocodile Bank (Optional)." },
+      { "stop": "Mahabalipuram", "desc": "Shore Temple, Five Rathas, Arjuna's Penance." },
+      { "stop": "Sea Shell Museum", "desc": "Visit India's largest seashell museum." },
+      { "stop": "Chennai Drop", "desc": "Return by 7:00 PM." }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Half-Day",
-        "Full-Day"
+        "Package Type",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹3,000",
-          "₹4,000"
+          "Full Day Trip",
+          "₹3,500"
         ],
         [
-          "SUV",
-          "₹4,200",
-          "₹5,500"
+          "SUV (Ertiga)",
+          "Full Day Trip",
+          "₹4,500"
         ],
         [
           "Innova",
-          "₹5,000",
+          "Full Day Trip",
+          "₹5,500"
+        ],
+        [
+          "Crysta",
+          "Full Day Trip",
           "₹6,500"
+        ],
+        [
+          "Tempo Traveller",
+          "Full Day Trip",
+          "₹8,000"
         ]
       ],
-      "note": "KM calculated based on ECR route.",
+      "note": "Includes: Fuel, Driver Bata, Parking. Excludes: Entry tickets, Food.",
       "headers_ta": [
         "வாகனம்",
-        "Half-Day",
-        "Full-Day"
+        "தொகுப்பு வகை",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹3,000",
-          "₹4,000"
+          "முழு நாள் பயணம்",
+          "₹3,500"
         ],
         [
-          "எஸ்யூவி",
-          "₹4,200",
-          "₹5,500"
+          "எஸ்யூவி (Ertiga)",
+          "முழு நாள் பயணம்",
+          "₹4,500"
         ],
         [
           "இன்னோவா",
-          "₹5,000",
+          "முழு நாள் பயணம்",
+          "₹5,500"
+        ],
+        [
+          "கிறிஸ்டா",
+          "முழு நாள் பயணம்",
           "₹6,500"
+        ],
+        [
+          "டெம்போ டிராவலர்",
+          "முழு நாள் பயணம்",
+          "₹8,000"
         ]
       ],
-      "note_ta": "KM calculated based on ECR route."
+      "note_ta": "எரிபொருள், டிரைவர் பேட்டா, பார்க்கிங் ஆகியவை அடங்கும். நுழைவுச் சீட்டுகள், உணவு ஆகியவை இல்லை."
     },
     "includes": [
       "Sightseeing assistance",
@@ -2310,46 +2774,82 @@
     "slug": "one-day-chennai-city-tour",
     "category": "Misc Services",
     "title": "Chennai City Sightseeing (1 Day Trip)",
-    "overview": "Explore Chennai’s iconic locations with a flexible plan.",
+    "overview": "Explore Chennai’s iconic locations with a flexible plan. Visit ancient temples, colonial monuments, and the vibrant Marina Beach.",
+    "routePlan": [
+      { "stop": "Pickup", "desc": "Start at 9:00 AM." },
+      { "stop": "Kapaleeshwarar", "desc": "Mylapore temple visit." },
+      { "stop": "Santhome Basilica", "desc": "Historic church built over St. Thomas tomb." },
+      { "stop": "Govt Museum", "desc": "Egmore Museum (closed Fridays)." },
+      { "stop": "Marina Beach", "desc": "Sunset at the world's second-longest urban beach." },
+      { "stop": "Drop", "desc": "End of tour." }
+    ],
     "tariff": {
       "headers": [
         "Vehicle",
-        "Rate"
+        "Package",
+        "Total Cost"
       ],
       "rows": [
         [
           "Sedan",
-          "₹3,000 – ₹3,500"
+          "8 Hrs / 80 Km",
+          "₹3,000"
         ],
         [
-          "SUV",
-          "₹4,200 – ₹4,800"
+          "SUV (Ertiga)",
+          "8 Hrs / 80 Km",
+          "₹4,000"
         ],
         [
           "Innova",
-          "₹5,500 – ₹6,200"
+          "8 Hrs / 80 Km",
+          "₹5,000"
+        ],
+        [
+          "Crysta",
+          "8 Hrs / 80 Km",
+          "₹6,000"
+        ],
+        [
+          "Tempo Traveller",
+          "8 Hrs / 80 Km",
+          "₹7,500"
         ]
       ],
-      "note": "8 hrs / 80 km package. Extra km → as per master rates.",
+      "note": "Extra km/hour charged as per master rates. Includes Fuel & Driver.",
       "headers_ta": [
         "வாகனம்",
-        "விலை"
+        "தொகுப்பு",
+        "மொத்த செலவு"
       ],
       "rows_ta": [
         [
           "செடான்",
-          "₹3,000 – ₹3,500"
+          "8 மணி / 80 கி.மீ",
+          "₹3,000"
         ],
         [
-          "எஸ்யூவி",
-          "₹4,200 – ₹4,800"
+          "எஸ்யூவி (Ertiga)",
+          "8 மணி / 80 கி.மீ",
+          "₹4,000"
         ],
         [
           "இன்னோவா",
-          "₹5,500 – ₹6,200"
+          "8 மணி / 80 கி.மீ",
+          "₹5,000"
+        ],
+        [
+          "கிறிஸ்டா",
+          "8 மணி / 80 கி.மீ",
+          "₹6,000"
+        ],
+        [
+          "டெம்போ டிராவலர்",
+          "8 மணி / 80 கி.மீ",
+          "₹7,500"
         ]
       ],
-      "note_ta": "8 hrs / 80 km package. கூடுதல் கி.மீ → as per master rates."
+      "note_ta": "கூடுதல் கி.மீ/மணிக்கு மாஸ்டர் கட்டணத்தின்படி வசூலிக்கப்படும். எரிபொருள் மற்றும் டிரைவர் பேட்டா அடங்கும்."
     },
     "travelGuide": {
       "history": "Chennai (Madras) is the capital of Tamil Nadu. It is known for its rich cultural heritage, British colonial architecture, and the second-longest urban beach in the world.",

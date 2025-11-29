@@ -109,17 +109,55 @@ const schema = {
       <div class={`absolute inset-0 z-0 ${heroImage ? 'bg-gradient-to-t from-black via-black/80 to-transparent' : 'bg-gradient-to-br from-red-900/40 to-black'}`}></div>
 
       <div class="max-w-4xl mx-auto relative z-10">
-        <span class="inline-block py-1 px-3 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-semibold tracking-wider mb-4 uppercase">
-          {service.category}
-        </span>
+        <div class="flex flex-wrap gap-3 mb-4">
+          <span class="inline-block py-1 px-3 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-semibold tracking-wider uppercase">
+            {service.category}
+          </span>
+        </div>
         <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">{service.title}</h1>
-        {service.overview && <p class="text-gray-300 text-lg max-w-2xl">{service.overview}</p>}
+        {service.overview && <p class="text-gray-300 text-lg max-w-2xl whitespace-pre-line">{service.overview}</p>}
       </div>
     </div>
 
     <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-20">
       <div class="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
         
+        <!-- Route Plan Section (Creative Card Style) -->
+        {service.routePlan && (
+          <div class="p-6 md:p-8 border-b border-gray-100 bg-gray-50/50">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+                  <i class="fa-solid fa-map-location-dot text-red-600"></i> Route Plan
+                </h2>
+                {service.duration && (
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-sm font-bold text-gray-700">
+                        <i class="fa-regular fa-clock text-red-600"></i> {service.duration}
+                    </span>
+                )}
+            </div>
+
+            <div class="relative">
+              <!-- Connecting Line (Desktop) -->
+              <div class="absolute top-4 left-0 w-full h-1 bg-gray-200 hidden md:block"></div>
+              
+              <!-- Horizontal Scroll Container -->
+              <div class="flex overflow-x-auto pb-4 gap-4 md:gap-0 md:justify-between snap-x scrollbar-hide">
+                {service.routePlan.map((stop, index) => (
+                  <div class="flex flex-col items-center text-center gap-3 min-w-[140px] md:min-w-0 flex-1 snap-center relative z-10">
+                    <div class="w-9 h-9 rounded-full bg-white border-4 border-red-500 flex items-center justify-center shadow-sm shrink-0">
+                      <span class="text-xs font-bold text-gray-700">{index + 1}</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 w-full">
+                      <h4 class="font-bold text-gray-900 text-sm">{stop.stop}</h4>
+                      <p class="text-xs text-gray-500 leading-tight">{stop.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         <!-- Tariff Section -->
         {service.tariff && (
           <div class="p-6 md:p-8 border-b border-gray-100">
@@ -127,26 +165,73 @@ const schema = {
               <i class="fa-solid fa-tag text-red-600"></i> Tariff & Pricing
             </h2>
             
-            <div class="overflow-x-auto">
-              <table class="w-full text-left border-collapse">
-                <thead>
-                  <tr class="bg-gray-50 border-b border-gray-200">
-                    {service.tariff.headers.map((header) => (
-                      <th class="py-3 px-4 text-sm font-semibold text-gray-700 uppercase tracking-wider">{header}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100">
-                  {service.tariff.rows.map((row) => (
-                    <tr class="hover:bg-gray-50 transition-colors">
-                      {row.map((cell) => (
-                        <td class="py-3 px-4 text-gray-800 font-medium">{cell}</td>
+            {/* Smart Tariff Display */}
+            {service.tariff.headers.length > 3 && service.tariff.headers[service.tariff.headers.length - 1].toLowerCase().includes('total') ? (
+              <div class="space-y-4">
+                {service.tariff.rows.map((row, rowIndex) => (
+                  <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center mb-2">
+                      <h3 class="font-bold text-gray-900 text-lg">{row[0]}</h3>
+                      <span class="text-xl font-bold text-green-700">{row[row.length - 1]}</span>
+                    </div>
+                    
+                    <details class="group">
+                      <summary class="text-sm text-red-600 font-medium cursor-pointer hover:text-red-700 flex items-center gap-1 select-none">
+                        <span>View Breakdown</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-open:rotate-180"></i>
+                      </summary>
+                      <div class="mt-3 pt-3 border-t border-gray-100 bg-gray-50 rounded p-3">
+                        <p class="text-xs text-gray-500 mb-2 uppercase tracking-wider font-semibold">Fare Components</p>
+                        {service.tariff.headers.slice(1, -1).map((header, index) => (
+                          <div class="flex justify-between items-center mb-2 last:mb-0">
+                            <div class="flex items-center gap-2">
+                              <span class="w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center text-[10px] text-gray-500">
+                                <i class="fa-solid fa-plus"></i>
+                              </span>
+                              <span class="text-sm text-gray-600">{header}</span>
+                            </div>
+                            <span class="font-medium text-gray-900 text-sm">{row[index + 1]}</span>
+                          </div>
+                        ))}
+                        <div class="mt-3 pt-2 border-t border-gray-200 border-dashed flex justify-between items-center">
+                           <div class="flex items-center gap-2">
+                              <span class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-[10px] text-green-600">
+                                <i class="fa-solid fa-equals"></i>
+                              </span>
+                              <span class="text-sm font-bold text-gray-800">Est. Total</span>
+                           </div>
+                           <span class="font-bold text-green-700 text-base">{row[row.length - 1]}</span>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                      {service.tariff.headers.map((header) => (
+                        <th class="py-3 px-4 text-sm font-semibold text-gray-700 uppercase tracking-wider">{header}</th>
                       ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    {service.tariff.rows.map((row) => (
+                      <tr class="hover:bg-gray-50 transition-colors">
+                        {row.map((cell, index) => (
+                          <td class={`py-3 px-4 text-gray-800 font-medium ${index === row.length - 1 ? 'font-bold text-green-700' : ''}`}>
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
             {service.tariff.note && (
               <p class="mt-4 text-sm text-gray-500 italic bg-yellow-50 p-3 rounded border border-yellow-100">
                 <i class="fa-solid fa-circle-info mr-2 text-yellow-600"></i> {service.tariff.note}
