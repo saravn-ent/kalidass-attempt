@@ -13,7 +13,7 @@ const { service } = Astro.props;
 const whatsappLink = `https://wa.me/919092303060?text=${encodeURIComponent(service.whatsappMsg)}`;
 
 // Image Mapping (Same as Tours.astro)
-const tourImages = {
+const tourImages: Record<string, string> = {
   "tirupati-package": "/images/temple/Tirupati-Balaji.jpg",
   "thiruvannamalai-girivalam-trip": "/images/temple/Thiruvannamalai-Girivalam.jpg",
   "rameswaram-2-days": "/images/temple/Rameswaram.avif",
@@ -27,7 +27,15 @@ const tourImages = {
   "one-day-chennai-city-tour": "/images/temple/chennai-city.jpg" 
 };
 
-const heroImage = tourImages[service.slug];
+const categoryImages: Record<string, string> = {
+  "Acting Driver Services": "/images/services/acting-drivers.jpg",
+  "Corporate Travel": "/images/services/corporate.jpg",
+  "Airport Transfers": "/images/services/airport-transfer.jpg",
+  "Temple Tours": "/images/services/temple-tours.jpg",
+  "Premium Fleet Rental": "/images/services/corporate.jpg"
+};
+
+const heroImage = tourImages[service.slug] || categoryImages[service.category] || '/images/logo.png';
 
 const schema = {
   "@context": "https://schema.org",
@@ -37,7 +45,7 @@ const schema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Kalidass Travels",
-    "image": "https://kalidasstravels.in/wp-content/uploads/2025/11/airavatesvara-temple-1654590752_541a0582f2c9f6d5530a.webp",
+    "image": "https://kalidasstravels.in/images/logo.png",
     "telephone": "+919092303060",
     "address": {
       "@type": "PostalAddress",

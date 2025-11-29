@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import serviceDetails from '../../data/serviceDetails.json';
 
 // Group services by category
-const servicesByCategory = serviceDetails.reduce((acc, service) => {
+const servicesByCategory = serviceDetails.reduce((acc: Record<string, typeof serviceDetails>, service) => {
   if (!acc[service.category]) {
     acc[service.category] = [];
   }
@@ -18,7 +18,8 @@ const schema = {
   "@type": "CollectionPage",
   "name": "All Services - Kalidass Travels",
   "description": "Explore our wide range of travel solutions including Temple Tours, Corporate Travel, and Outstation Cabs.",
-  "url": Astro.url.href
+  "url": Astro.url.href,
+  "image": "https://kalidasstravels.in/images/logo.png"
 };
 ---
 

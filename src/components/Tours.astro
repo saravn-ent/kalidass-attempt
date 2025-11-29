@@ -40,7 +40,7 @@ const tourImages: Record<string, string> = {
 };
 ---
 
-<section id="tours" class="py-16 bg-gray-50">
+<section id="tours" class="py-10 md:py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4">
     
     <!-- SECTION 1: POPULAR TEMPLE TRIPS -->
@@ -59,7 +59,7 @@ const tourImages: Record<string, string> = {
 
       <div class="flex overflow-x-auto gap-4 px-2 pb-6 scrollbar-hide snap-x">
         {templeTrips.map((tour) => (
-          <a href={`/services/${tour.slug}`} class="flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
+          <a href={`/services/${tour.slug}`} class="block flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
             <div class="h-36 sm:h-40 overflow-hidden relative">
               <img 
                 src={tourImages[tour.slug] || "https://images.unsplash.com/photo-1596700414605-e45f1b1c7c9a?q=80&w=600"} 
@@ -114,7 +114,7 @@ const tourImages: Record<string, string> = {
 
       <div class="flex overflow-x-auto gap-4 px-2 pb-6 scrollbar-hide snap-x">
         {popularDestinations.map((tour) => (
-          <a href={`/services/${tour.slug}`} class="flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
+          <a href={`/services/${tour.slug}`} class="block flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
             <div class="h-36 sm:h-40 overflow-hidden relative">
               <img 
                 src={tourImages[tour.slug] || "https://images.unsplash.com/photo-1596700414605-e45f1b1c7c9a?q=80&w=600"} 

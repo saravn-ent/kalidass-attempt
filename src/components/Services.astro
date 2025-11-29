@@ -3,7 +3,7 @@ import siteContent from '../data/siteContent.json';
 const services = siteContent.services;
 ---
 
-<section id="services" class="py-16 bg-gray-50">
+<section id="services" class="py-10 md:py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-8">
@@ -21,7 +21,7 @@ const services = siteContent.services;
     <!-- Services Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       {services.map((service) => (
-        <a href={service.link} class="group relative h-40 sm:h-80 rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer block">
+        <a href={service.link} class="group relative h-60 sm:h-80 rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer block">
           <!-- Background Image -->
           <img 
             src={service.image} 

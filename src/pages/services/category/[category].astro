@@ -49,18 +49,30 @@ const getServicesForCategory = (catSlug) => {
 
 const categoryServices = getServicesForCategory(category);
 
+const categoryImages: Record<string, string> = {
+  'acting-drivers': '/images/services/acting-drivers.jpg',
+  'corporate': '/images/services/corporate.jpg',
+  'airport-transfer': '/images/services/airport-transfer.jpg',
+  'temple-tours': '/images/services/temple-tours.jpg',
+  'popular-destinations': '/images/temple/Mahabalipuram-ECR-Temples.jpg'
+};
+
+const heroImage = categoryImages[category] || '/images/logo.png';
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": `${title} - Kalidass Travels`,
   "description": description,
-  "url": Astro.url.href
+  "url": Astro.url.href,
+  "image": `https://kalidasstravels.in${heroImage}`
 };
 ---
 
 <Layout 
   title={`${title} - Kalidass Travels`}
   description={description}
+  image={heroImage}
   schema={schema}
 >
   <main class="bg-gray-50 min-h-screen py-20">
