@@ -150,6 +150,9 @@ const hero = siteContent.hero;
     if (dropInput) new google.maps.places.Autocomplete(dropInput, options);
   };
 
+  // Expose to window for the callback
+  (window as any).initAutocomplete = initAutocomplete;
+
   const loadGoogleMaps = () => {
     if ((window as any).google?.maps?.places) {
       initAutocomplete();
@@ -157,11 +160,9 @@ const hero = siteContent.hero;
     }
     
     const script = document.createElement('script');
-    // IMPORTANT: Replace YOUR_API_KEY with your actual Google Maps API Key
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBPpRgTPIkv20IMdaBqqdlz0S0FEGU5400&libraries=places&loading=async`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBPpRgTPIkv20IMdaBqqdlz0S0FEGU5400&libraries=places&loading=async&callback=initAutocomplete`;
     script.async = true;
     script.defer = true;
-    script.onload = initAutocomplete;
     document.head.appendChild(script);
   };
 
