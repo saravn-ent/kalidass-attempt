@@ -86,6 +86,17 @@
       "Service starts & ends at your location.",
       "No hidden charges."
     ],
+    "travelGuide": {
+      "history": "Our Acting Driver service provides you with professional, verified drivers to drive your personal vehicle. Whether you need to commute to work, attend meetings, go shopping, or visit family, our drivers ensure you reach your destination safely and comfortably in your own car. We handle the driving so you can relax, work, or make calls.",
+      "timings": "• **Standard Hours:** 6:00 AM to 10:00 PM\n• **Night Duty:** 10:00 PM to 6:00 AM (Additional charges apply)\n• **Booking Lead Time:** Minimum 2 hours notice recommended for guaranteed availability.",
+      "tips": [
+        "Ensure your vehicle documents (RC, Insurance, Pollution) are up to date.",
+        "Keep the fuel tank sufficiently filled before the trip starts.",
+        "Inform the driver about any specific vehicle quirks or handling instructions.",
+        "For long durations, clarify meal breaks with the driver beforehand."
+      ],
+      "dressCode": "Our drivers arrive in professional attire, ensuring a presentable and disciplined service experience."
+    },
     "whatsappMsg": "Hi, I need an Acting Driver within Chennai.",
     "title_ta": "Acting Driver – Within சென்னை",
     "category_ta": "ஆக்டிங் டிரைவர் சேவைகள்",
@@ -156,6 +167,17 @@
       "Driver food",
       "Return travel (if required)"
     ],
+    "travelGuide": {
+      "history": "Our Outstation One-Way Driver service is perfect when you need to drop your car off at another city or move your vehicle without driving it yourself. Our experienced highway drivers handle the long drive safely, allowing you to travel stress-free or send your car ahead.",
+      "timings": "• **Availability:** 24/7 Service\n• **Night Driving:** Safe night driving guaranteed with experienced drivers.\n• **Booking:** Please book at least 4-6 hours in advance for outstation trips.",
+      "tips": [
+        "Check tyre pressure and fluid levels before a long highway trip.",
+        "Ensure the spare tyre and tool kit are in good condition.",
+        "Fastag should have sufficient balance for toll plazas.",
+        "Driver's return travel is their responsibility unless specified otherwise."
+      ],
+      "dressCode": "Drivers are equipped for long-distance travel with professional conduct."
+    },
     "faq": [
       {
         "q": "What if the trip cancels?",
@@ -233,6 +255,17 @@
           "₹200"
         ]
       ]
+    },
+    "travelGuide": {
+      "history": "Planning a weekend getaway, a family temple run, or a business tour? Our Round Trip Acting Driver service provides you with a dedicated driver for the entire duration of your trip. They stay with you, handle local navigation, and ensure your return journey is as comfortable as the onward one.",
+      "timings": "• **Duty Hours:** Up to 14 hours of driving/duty per day.\n• **Rest Period:** Drivers require an 8-hour rest break for safety on multi-day trips.\n• **Availability:** 24/7 for trip start.",
+      "tips": [
+        "Arrange for driver's accommodation if staying overnight (or pay allowance).",
+        "Plan your itinerary to allow for safe driving breaks.",
+        "Keep vehicle documents handy for interstate border checks.",
+        "Discuss the route preference with the driver before starting."
+      ],
+      "dressCode": "Professional and courteous drivers suitable for family and corporate trips."
     },
     "faq": [
       {
@@ -499,6 +532,17 @@
       "Fuel (actual usage)",
       "Toll, parking (actuals)"
     ],
+    "travelGuide": {
+      "history": "Our Corporate Monthly Car Rental service is designed to be an extension of your business. We provide dedicated vehicles and professional chauffeurs who understand corporate etiquette. This service eliminates the hassle of fleet management, insurance, and driver payroll for your company.",
+      "timings": "• **Standard Shift:** 10 hours per day / 26 days a month.\n• **Flexibility:** Custom timings available upon request.\n• **Support:** 24/7 backend support for replacements and emergencies.",
+      "tips": [
+        "Define the reporting location and time clearly for the driver.",
+        "Utilize our monthly reporting for your expense tracking.",
+        "Inform us in advance for outstation trips to arrange permits.",
+        "Feedback mechanism available for driver performance."
+      ],
+      "dressCode": "Drivers wear formal attire and maintain high grooming standards."
+    },
     "faq": [
       {
         "q": "What if driver is sick?",
@@ -576,6 +620,17 @@
       "No hidden route charges",
       "Drivers trained for corporate etiquette"
     ],
+    "travelGuide": {
+      "history": "Ensuring your employees reach work safely and on time is crucial for productivity. Our Employee Transport Service offers routed pickup and drop solutions with a focus on safety, especially for female employees. We use optimized routing to minimize travel time.",
+      "timings": "• **Shifts:** Covers all shifts including general, afternoon, and night shifts.\n• **Punctuality:** Vehicles arrive 10 minutes before scheduled pickup.\n• **Tracking:** Real-time location updates available.",
+      "tips": [
+        "Employees should be at the pickup point 5 minutes early.",
+        "Route changes should be communicated to the transport desk, not just the driver.",
+        "Emergency contact numbers are provided in every vehicle.",
+        "Regular feedback helps us optimize routes better."
+      ],
+      "dressCode": "Drivers are uniformed and carry ID cards at all times."
+    },
     "faq": [
       {
         "q": "Is multi-stop allowed?",
@@ -721,6 +776,17 @@
       "GST bills available (optional)",
       "Transparent tariff (nothing hidden)"
     ],
+    "travelGuide": {
+      "history": "First impressions matter. Our Corporate Airport Transfer service ensures your clients and executives are received with professionalism and comfort. We monitor flight schedules to handle delays proactively, ensuring a seamless experience from arrival to destination.",
+      "timings": "• **Availability:** 24/7 Service.\n• **Waiting Time:** Complimentary 45 mins waiting for international arrivals.\n• **Tracking:** Flight tracking included.",
+      "tips": [
+        "Provide flight number during booking for accurate tracking.",
+        "Meet the driver at the designated pickup zone (usually Pillar 10 or similar).",
+        "Keep your phone switched on after landing.",
+        "Pre-book return transfers to avoid last-minute hassle."
+      ],
+      "dressCode": "Chauffeurs in formal attire with placards for easy identification."
+    },
     "whatsappMsg": "Corporate airport transfer required.",
     "title_ta": "கார்ப்பரேட் விமான நிலைய சவாரி",
     "category_ta": "கார்ப்பரேட் பயணம்",
@@ -769,6 +835,17 @@
         ]
       ],
       "note_ta": "குறிப்பு: No extra km surprises. We follow zone-based pricing."
+    },
+    "travelGuide": {
+      "history": "Start your journey with peace of mind. Our Airport Drop service guarantees punctuality so you never have to worry about missing a flight. Our sedans are clean, comfortable, and spacious enough for your luggage, providing a relaxing ride to the terminal.",
+      "timings": "• **Pickup:** We arrive 15 minutes before your scheduled time.\n• **Travel Time:** We account for traffic buffers when suggesting pickup times.\n• **Availability:** 24/7.",
+      "tips": [
+        "Book your cab at least 4 hours before your flight time.",
+        "Account for peak hour traffic in Chennai (8 AM - 11 AM & 5 PM - 9 PM).",
+        "Check for your passport and tickets before leaving home.",
+        "Inform us if you have extra large luggage."
+      ],
+      "dressCode": "Professional drivers with clean, well-maintained vehicles."
     },
     "includes": [
       "Clean AC sedan",
@@ -867,6 +944,17 @@
       "Name-board (optional)",
       "30 mins free waiting"
     ],
+    "travelGuide": {
+      "history": "Arriving in a new city or returning home should be a pleasant experience. Our Airport Pickup service ensures a warm welcome. Our driver waits for you at the arrival terminal with a placard, assists with your luggage, and drives you safely to your destination, avoiding the chaos of hailing a cab.",
+      "timings": "• **Waiting:** We track your flight and wait for you.\n• **Delay Policy:** 45 mins free waiting time from actual landing time.\n• **Availability:** 24/7.",
+      "tips": [
+        "Share your flight number for accurate tracking.",
+        "Look for the driver with your name placard near the exit.",
+        "Keep our support number handy in case you can't locate the driver.",
+        "Pre-pay or pay via UPI/Cash upon arrival."
+      ],
+      "dressCode": "Professional drivers with placards."
+    },
     "whatsappMsg": "Airport Pickup – Sedan.",
     "title_ta": "Airport பிக்கப் – செடான்",
     "category_ta": "விமான நிலைய சவாரி",
@@ -901,6 +989,17 @@
         ]
       ],
       "note_ta": "30 min free waiting"
+    },
+    "travelGuide": {
+      "history": "Traveling with family or a team? Our SUV Airport Pickup offers the space and comfort you need. With ample luggage capacity and spacious seating, it's the perfect choice for groups of 3-6 passengers.",
+      "timings": "• **Waiting:** We track your flight and wait for you.\n• **Delay Policy:** 45 mins free waiting time from actual landing time.\n• **Availability:** 24/7.",
+      "tips": [
+        "Specify luggage count to ensure the right SUV is assigned.",
+        "Share your flight number for accurate tracking.",
+        "Look for the driver with your name placard near the exit.",
+        "Pre-pay or pay via UPI/Cash upon arrival."
+      ],
+      "dressCode": "Professional drivers with placards."
     },
     "whatsappMsg": "Airport Pickup – SUV.",
     "title_ta": "Airport பிக்கப் – எஸ்யூவி",
@@ -1055,6 +1154,17 @@
       "Darshan Tickets",
       "Food & Accommodation"
     ],
+    "travelGuide": {
+      "history": "Tirumala is home to Lord Venkateswara, an incarnation of Vishnu. It is one of the richest and most visited religious centers in the world. The temple is located on the seventh peak of the Seshachalam Hills.",
+      "timings": "General Darshan: 8:30 AM – 11:00 PM\nVIP Break Darshan: 6:00 AM – 8:00 AM\nSuprabhatam: 3:00 AM",
+      "dressCode": "Strictly Traditional. Men: Dhoti/Pyjama with Upper Cloth. Women: Saree/Chudidhar with Dupatta.",
+      "tips": [
+        "Book Special Entry Darshan (₹300) online 2-3 months in advance.",
+        "Carry original ID proof (Aadhar/Voter ID) used for booking.",
+        "Tonsuring (Mottai) is best done at Kalyana Katta before bath.",
+        "Electronic items and luggage are not allowed inside the temple queue."
+      ]
+    },
     "whatsappMsg": "Hi, I need details for Tirupati Package.",
     "title_ta": "திருப்பதி Balaji Darshan தொகுப்பு",
     "category_ta": "கோவில் சுற்றுலா",
@@ -1152,6 +1262,17 @@
       "Parking (actuals)",
       "Toll charges (if route via highway)"
     ],
+    "travelGuide": {
+      "history": "Known as the 'City of Thousand Temples', Kanchipuram was the capital of the Pallava dynasty. It is one of the seven sacred cities (Mokshapuri) in India.",
+      "timings": "Most temples: 6:00 AM – 12:30 PM & 4:00 PM – 8:30 PM",
+      "dressCode": "Traditional wear recommended. Modest clothing is mandatory.",
+      "tips": [
+        "Visit Ekambareswarar Temple first (largest).",
+        "Kamakshi Amman Temple is the heart of the city.",
+        "Don't miss the famous Kanchipuram Silk Saree shopping.",
+        "Varadharaja Perumal Temple has the famous Golden & Silver Lizards."
+      ]
+    },
     "faq": [
       {
         "q": "Best start time?",
@@ -1245,6 +1366,17 @@
     "notes": [
       "Note: Night Girivalam requires alert drivers. We assign our most experienced night-route drivers."
     ],
+    "travelGuide": {
+      "history": "Thiruvannamalai is the abode of Lord Annamalaiyar (Shiva) representing the Fire element (Agni Lingam). Girivalam (circumambulation of the hill) is believed to remove sins.",
+      "timings": "Temple: 5:00 AM – 12:30 PM & 3:30 PM – 9:30 PM\nGirivalam: Can be done 24/7, but Pournami (Full Moon) is special.",
+      "dressCode": "Traditional wear recommended.",
+      "tips": [
+        "Girivalam distance is 14km. Wear comfortable walking shoes (though many walk barefoot).",
+        "Start Girivalam early morning or late evening to avoid heat.",
+        "Visit Ramana Maharshi Ashram on the Girivalam path.",
+        "Carry water but avoid heavy food before the walk."
+      ]
+    },
     "faq": [
       {
         "q": "Is night driving safe?",
@@ -1313,6 +1445,17 @@
         ]
       ],
       "note_ta": "Why the range? Transparent — depends on: actual km, route chosen, toll count"
+    },
+    "travelGuide": {
+      "history": "Chidambaram Thillai Nataraja Temple represents the Sky element (Akasha Lingam). It is famous for the 'Chidambara Rahasiyam' and the cosmic dance of Lord Shiva.",
+      "timings": "6:00 AM – 12:00 PM & 5:00 PM – 10:00 PM",
+      "dressCode": "Men must remove shirts/vests to enter the inner sanctum.",
+      "tips": [
+        "Witness the Spatika Linga Puja at 10 AM.",
+        "Visit the Pichavaram Mangrove Forest nearby (15km).",
+        "The temple architecture represents the human body structure.",
+        "Dikshitars are the hereditary priests here."
+      ]
     },
     "whatsappMsg": "Chidambaram trip details.",
     "title_ta": "சிதம்பரம் Natarajar Temple Trip",
@@ -1388,6 +1531,17 @@
         "a_ta": "Yes — morning visit recommended."
       }
     ],
+    "travelGuide": {
+      "history": "Rameswaram is one of the Char Dham pilgrimage sites. It is where Lord Rama built a bridge (Ram Setu) to Lanka. The Ramanathaswamy Temple is famous for its long corridors and 22 sacred wells (Theerthams).",
+      "timings": "5:00 AM – 1:00 PM & 3:00 PM – 9:00 PM",
+      "dressCode": "Traditional wear. Wet clothes are allowed after Theertham bath.",
+      "tips": [
+        "Start with Agni Theertham (Sea Bath) first.",
+        "Proceed to 22 Wells Bath inside the temple (Ticket required).",
+        "Visit Dhanushkodi (Ghost Town) early morning.",
+        "Dr. APJ Abdul Kalam Memorial is a must-visit."
+      ]
+    },
     "whatsappMsg": "Book Rameswaram 2-day package.",
     "title_ta": "ராமேஸ்வரம் (2-Day Trip)",
     "category_ta": "கோவில் சுற்றுலா",
@@ -1493,6 +1647,17 @@
         "a_ta": "பிக்கப் from சென்னை or Kumbakonam railway station."
       }
     ],
+    "travelGuide": {
+      "history": "The Navagraha temples are a cluster of 9 temples dedicated to the nine planetary deities. They are located around Kumbakonam and Thanjavur.",
+      "timings": "Varies by temple, generally 6 AM – 12 PM & 4 PM – 8 PM.",
+      "dressCode": "Traditional wear recommended.",
+      "tips": [
+        "It is difficult to cover all 9 temples in one day. A 2-day trip is recommended.",
+        "Start early (5 AM) if attempting a 1-day trip.",
+        "Alangudi (Guru) and Thirunallar (Sani) are the most crowded.",
+        "Hire a local guide for optimal route planning."
+      ]
+    },
     "whatsappMsg": "Navagraha trip details please.",
     "title_ta": "நவகிரக Temple Tour (1 Day or 2 Days)",
     "category_ta": "கோவில் சுற்றுலா",
@@ -1556,6 +1721,17 @@
       ],
       "note_ta": "உள்ளடக்கியவை multiple driver bata days."
     },
+    "travelGuide": {
+      "history": "Sabarimala is the abode of Lord Ayyappa. It is located in the Periyar Tiger Reserve. The pilgrimage involves a rigorous 41-day Vratham (fasting).",
+      "timings": "Open only during Mandala Pooja (Nov-Dec), Makaravilakku (Jan), and first 5 days of every Malayalam month.",
+      "dressCode": "Black or Blue clothes (Ayyappa devotees). Irumudi Kettu is mandatory for 18 steps.",
+      "tips": [
+        "Carry original ID proof for Virtual Q verification.",
+        "Plastic is strictly banned in Sabarimala.",
+        "Be prepared for long trekking (Pamba to Sannidhanam).",
+        "Doli service is available for elderly people."
+      ]
+    },
     "whatsappMsg": "Sabarimala trip booking.",
     "title_ta": "சபரிமலை Trip (Season சேவை)",
     "category_ta": "கோவில் சுற்றுலா",
@@ -1611,6 +1787,17 @@
       "Flexible stops on ECR road",
       "AC Vehicle"
     ],
+    "travelGuide": {
+      "history": "Pondicherry (Puducherry) was a French colonial settlement until 1954. It is famous for its French Quarter architecture, Auroville, and spiritual heritage of Sri Aurobindo Ashram.",
+      "timings": "Auroville Visitor Centre: 9:00 AM – 5:00 PM\nManakula Vinayagar Temple: 5:45 AM – 12:30 PM & 4:00 PM – 9:30 PM",
+      "dressCode": "Casual wear is fine. Modest clothing required for temples and Ashram.",
+      "tips": [
+        "Rent a two-wheeler to explore White Town.",
+        "Visit Rock Beach during sunrise.",
+        "Try authentic French bakeries and cafes.",
+        "Auroville Matrimandir viewing requires prior booking."
+      ]
+    },
     "whatsappMsg": "Pondicherry trip details.",
     "title_ta": "பாண்டிச்சேரி Day Trip",
     "category_ta": "பிற சேவைகள்",
@@ -1671,6 +1858,17 @@
       "Driver allowance",
       "Toll & Parking assistance"
     ],
+    "travelGuide": {
+      "history": "Sripuram Golden Temple is a spiritual park situated at the foot of a small range of green hills. The temple is covered with 1,500 kg of pure gold foil.",
+      "timings": "Darshan: 8:00 AM – 8:00 PM\nAbhishekam: 4:00 AM – 8:00 AM",
+      "dressCode": "Strictly Traditional. No shorts, lungis, or sleeveless tops allowed.",
+      "tips": [
+        "Mobile phones and cameras are strictly prohibited inside.",
+        "Free Annadanam (food) is served to all devotees.",
+        "Wheelchair facility is available for seniors.",
+        "Star-shaped path requires a 1.5 km walk."
+      ]
+    },
     "whatsappMsg": "Vellore Golden Temple trip.",
     "title_ta": "வேலூர் Golden Temple Trip",
     "category_ta": "கோவில் சுற்றுலா",
@@ -1739,6 +1937,17 @@
       "Flexible timings",
       "Comfortable AC car"
     ],
+    "travelGuide": {
+      "history": "Mahabalipuram (Mamallapuram) was a bustling seaport of the Pallava kings in the 7th century. It is known for its rock-cut temples and is a UNESCO World Heritage Site.",
+      "timings": "Monuments: 6:00 AM – 6:00 PM\nLight House: 10:00 AM – 5:00 PM",
+      "dressCode": "Comfortable cotton clothes, hat/cap, and walking shoes recommended.",
+      "tips": [
+        "Carry an umbrella and water (it gets hot).",
+        "Visit Krishna's Butter Ball for unique photos.",
+        "Sea Shell Museum is great for kids.",
+        "Don't miss the Shore Temple at sunset."
+      ]
+    },
     "whatsappMsg": "Mahabalipuram trip booking.",
     "title_ta": "மகாபலிபுரம் & ECR Temples (Half-Day / Full-Day)",
     "category_ta": "கோவில் சுற்றுலா",
@@ -2141,6 +2350,17 @@
         ]
       ],
       "note_ta": "8 hrs / 80 km package. கூடுதல் கி.மீ → as per master rates."
+    },
+    "travelGuide": {
+      "history": "Chennai (Madras) is the capital of Tamil Nadu. It is known for its rich cultural heritage, British colonial architecture, and the second-longest urban beach in the world.",
+      "timings": "Marina Beach: Open 24/7 (Best 5 PM - 8 PM)\nKapaleeshwarar Temple: 5:00 AM – 12:30 PM & 4:00 PM – 9:30 PM\nGovt Museum: 9:30 AM – 5:00 PM (Fri Holiday)",
+      "dressCode": "Modest clothing for temples. Casuals for other places.",
+      "tips": [
+        "Visit Marina Beach in the evening for the breeze and street food.",
+        "Santhome Basilica is built over the tomb of St. Thomas.",
+        "Government Museum Egmore is great for history buffs.",
+        "Try authentic South Indian filter coffee."
+      ]
     },
     "whatsappMsg": "City tour booking.",
     "title_ta": "சென்னை City Sightseeing (1 Day Trip)",

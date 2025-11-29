@@ -5,10 +5,10 @@
     "highlight": "Premium Taxi Service for Pilgrimages & Corporate Travel.",
     "description": "We combine professional drivers, sanitized vehicles, and transparent WhatsApp support to keep every pilgrimage or corporate journey calm and reliable.",
     "images": [
-      "https://kalidasstravels.in/wp-content/uploads/2025/11/airavatesvara-temple-1654590752_541a0582f2c9f6d5530a.webp",
-      "https://kalidasstravels.in/wp-content/uploads/2025/11/coimbatore-1656092595_19e9fcebd774ab38d0a5.webp",
-      "https://kalidasstravels.in/wp-content/uploads/2025/11/Best-Tourist-Places-to-Visit-in-Tamil-nadu-1024x683-1.jpg",
-      "https://kalidasstravels.in/wp-content/uploads/2025/11/madurai.jpg"
+      "/images/hero/airavatesvara.webp",
+      "/images/hero/coimbatore.webp",
+      "/images/hero/Tamil-Nadu-1-scaled.avif",
+      "/images/hero/madurai.jpg"
     ],
     "cto": "Call Now",
     "phone": "+91 90923 03060",
@@ -66,7 +66,7 @@
       "rate": "₹11/km",
       "details": [
         "Best for City rides and Small family",
-        "AC",
+        "AC and Entertainment",
         "Daily/Outstation"
       ],
       "name_ta": "Swift Dzire",
@@ -82,7 +82,7 @@
       "rate": "₹12/km",
       "details": [
         "Best for Small family and city rides",
-        "AC",
+        "AC and Entertainment",
         "Comfortable"
       ],
       "name_ta": "Toyota Etios",
@@ -98,7 +98,7 @@
       "rate": "₹15/km",
       "details": [
         "Best for Large family and Outstation",
-        "AC",
+        "AC and Entertainment",
         "Spacious"
       ],
       "name_ta": "இன்னோவா",
@@ -114,7 +114,7 @@
       "rate": "₹15/km",
       "details": [
         "Best for Large family and Outstation",
-        "AC",
+        "AC and Entertainment",
         "Rugged"
       ],
       "name_ta": "Mahindra Bolero",
@@ -130,7 +130,7 @@
       "rate": "₹16/km",
       "details": [
         "Best for Large family and outstation",
-        "AC",
+        "AC and Entertainment",
         "Spacious"
       ],
       "name_ta": "Tata Sumo",

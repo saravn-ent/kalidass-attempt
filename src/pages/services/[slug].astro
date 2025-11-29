@@ -12,6 +12,27 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 const whatsappLink = `https://wa.me/919092303060?text=${encodeURIComponent(service.whatsappMsg)}`;
 
+// Dynamic Labels for Travel Guide / Service Info Section
+const isTour = ['Temple Tours', 'Popular Destinations'].includes(service.category);
+
+const guideLabels = isTour ? {
+  sectionTitle: "Travel Guide & Tips",
+  sectionIcon: "fa-book-open",
+  col1Title: "History & Significance",
+  col1Icon: "fa-landmark",
+  col2Title: "Darshan Timings",
+  col2Icon: "fa-clock",
+  tipsTitle: "Pro Tips for First-Timers"
+} : {
+  sectionTitle: "Service Details & Information",
+  sectionIcon: "fa-circle-info",
+  col1Title: "Service Overview",
+  col1Icon: "fa-briefcase",
+  col2Title: "Availability & Coverage",
+  col2Icon: "fa-calendar-check",
+  tipsTitle: "Important Information"
+};
+
 // Image Mapping (Same as Tours.astro)
 const tourImages: Record<string, string> = {
   "tirupati-package": "/images/temple/Tirupati-Balaji.jpg",
@@ -171,6 +192,72 @@ const schema = {
             </div>
           )}
         </div>
+
+        <!-- Travel Guide / Service Info Section -->
+        {service.travelGuide && (
+          <div class={`p-6 md:p-8 border-t border-gray-100 ${isTour ? 'bg-orange-50/30' : 'bg-blue-50/30'}`}>
+            <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <i class={`fa-solid ${guideLabels.sectionIcon} ${isTour ? 'text-orange-600' : 'text-blue-600'}`}></i> {guideLabels.sectionTitle}
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              {/* History / Overview */}
+              {service.travelGuide.history && (
+                <div>
+                  <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <i class={`fa-solid ${guideLabels.col1Icon} ${isTour ? 'text-orange-500' : 'text-blue-500'}`}></i> {guideLabels.col1Title}
+                  </h3>
+                  <p class="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                    {service.travelGuide.history}
+                  </p>
+                </div>
+              )}
+
+              {/* Timings / Availability */}
+              <div class="space-y-6">
+                {service.travelGuide.timings && (
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                      <i class={`fa-solid ${guideLabels.col2Icon} ${isTour ? 'text-orange-500' : 'text-blue-500'}`}></i> {guideLabels.col2Title}
+                    </h3>
+                    <p class="text-gray-600 text-sm whitespace-pre-line">
+                      {service.travelGuide.timings}
+                    </p>
+                  </div>
+                )}
+                
+                {service.travelGuide.dressCode && (
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                      <i class="fa-solid fa-user-tie text-orange-500"></i> Dress Code
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                      {service.travelGuide.dressCode}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Pro Tips / Important Info */}
+            {service.travelGuide.tips && (
+              <div class={`mt-8 bg-white rounded-lg p-5 border shadow-sm ${isTour ? 'border-orange-100' : 'border-blue-100'}`}>
+                <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <i class={`fa-solid fa-lightbulb ${isTour ? 'text-yellow-500' : 'text-blue-500'}`}></i> {guideLabels.tipsTitle}
+                </h3>
+                <ul class="grid md:grid-cols-2 gap-3">
+                  {service.travelGuide.tips.map((tip) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <i class={`fa-solid fa-check mt-1 ${isTour ? 'text-green-500' : 'text-blue-500'}`}></i>
+                      <span>{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+
 
         <!-- FAQ Section -->
         {service.faq && (
