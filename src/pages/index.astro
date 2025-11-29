@@ -11,6 +11,9 @@ import Reviews from '../components/Reviews.astro';
 import TariffCalculator from '../components/TariffCalculator.astro';
 import SafetySection from '../components/SafetySection.astro';
 
+// Use a specific OG image for the homepage if available, or fallback to a generic one
+const ogImage = "/images/hero/Tamil-Nadu-1-scaled.avif"; 
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -33,6 +36,7 @@ const schema = {
   title="Kalidass Travels - Premium Travel Experience in South India"
   description="Trusted travel partner in Chennai for Temple Tours, Corporate Travel, and Outstation Cabs. Verified drivers, transparent pricing, and 24/7 support."
   schema={schema}
+  image={ogImage}
 >
   <Hero />
   <BookingPanel />

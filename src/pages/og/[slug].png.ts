@@ -72,13 +72,18 @@ export const GET: APIRoute = async ({ params, request }) => {
   const fontPath = path.resolve("./public/fonts/NotoSans-Bold.ttf");
   const fontData = readFileSync(fontPath);
 
+  // Load Logo
+  const logoPath = path.resolve("./public/images/logo.png");
+  const logoBuffer = readFileSync(logoPath);
+  const logoBase64 = `data:image/png;base64,${logoBuffer.toString('base64')}`;
+
   const htmlString = `
     <div style="display: flex; height: 100%; width: 100%; background-color: #fff; position: relative;">
       ${imageBuffer ? `<img src="${imageBuffer}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;" />` : ''}
       
       <div style="display: flex; flex-direction: column; justify-content: center; padding: 80px; width: 100%; height: 100%;">
         <div style="display: flex; align-items: center; margin-bottom: 40px;">
-           <span style="font-size: 30px; color: #dc2626; font-weight: bold; background: white; padding: 10px 20px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Kalidass Travels</span>
+           <img src="${logoBase64}" style="height: 80px; object-fit: contain;" />
         </div>
 
         <h1 style="display: flex; font-size: 70px; font-weight: bold; color: #000; margin: 0; line-height: 1.1; text-shadow: 2px 2px 0px #fff; max-width: 90%;">
