@@ -1,9 +1,24 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  url?: string;
+  schema?: object;
 }
 
-const { title = 'Kalidass Travels - Premium Travel Experience' } = Astro.props;
+const { 
+  title = 'Kalidass Travels - Premium Travel Experience',
+  description = 'Premium travel and cab services across South India. Professional drivers, comfortable vehicles, affordable rates.',
+  image = 'https://kalidasstravels.in/wp-content/uploads/2025/11/airavatesvara-temple-1654590752_541a0582f2c9f6d5530a.webp',
+  type = 'website',
+  url = Astro.url.href,
+  schema
+} = Astro.props;
+
+const siteUrl = 'https://kalidasstravels.in';
+const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
 <!DOCTYPE html>
@@ -11,8 +26,29 @@ const { title = 'Kalidass Travels - Premium Travel Experience' } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Premium travel and cab services across South India. Professional drivers, comfortable vehicles, affordable rates." />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
     <title>{title}</title>
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:site_name" content="Kalidass Travels" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={fullImage} />
+
+    <!-- Schema.org JSON-LD -->
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

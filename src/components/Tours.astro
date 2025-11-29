@@ -44,40 +44,40 @@ const tourImages: Record<string, string> = {
   <div class="max-w-7xl mx-auto px-4">
     
     <!-- SECTION 1: POPULAR TEMPLE TRIPS -->
-    <div class="mb-16">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 inline-block relative mb-4">
+    <div class="mb-12">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 inline-block relative mb-3">
           Popular Temple Trips
-          <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-red-600 rounded-full"></div>
+          <div class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-600 rounded-full"></div>
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+        <p class="text-base text-gray-600 max-w-2xl mx-auto mt-2">
           Sacred pilgrimages and spiritual journeys.
         </p>
       </div>
 
-      <div class="flex overflow-x-auto gap-6 px-2 pb-8 scrollbar-hide snap-x">
+      <div class="flex overflow-x-auto gap-4 px-2 pb-6 scrollbar-hide snap-x">
         {templeTrips.map((tour) => (
-          <a href={`/services/${tour.slug}`} class="flex-none w-80 snap-center bg-white rounded-2xl shadow-md overflow-hidden group cursor-pointer hover:shadow-xl transition">
-            <div class="h-48 overflow-hidden relative">
+          <a href={`/services/${tour.slug}`} class="flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
+            <div class="h-36 sm:h-40 overflow-hidden relative">
               <img 
                 src={tourImages[tour.slug] || "https://images.unsplash.com/photo-1596700414605-e45f1b1c7c9a?q=80&w=600"} 
                 alt={tour.title}
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-700" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700" 
               />
-              <span class="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-sm">PILGRIMAGE</span>
+              <span class="absolute top-2 left-2 bg-orange-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">PILGRIMAGE</span>
             </div>
-            <div class="p-5">
-              <h3 class="font-bold text-lg mb-2 text-gray-900 line-clamp-1">{tour.title}</h3>
-              <p class="text-sm text-gray-500 mb-4 line-clamp-2">{tour.overview}</p>
-              <div class="flex items-center text-red-600 font-bold text-sm uppercase tracking-wide">
+            <div class="p-4">
+              <h3 class="font-bold text-base text-gray-900 mb-1 line-clamp-1">{tour.title}</h3>
+              <p class="text-xs text-gray-500 mb-3 line-clamp-2">{tour.overview}</p>
+              <div class="flex items-center text-red-600 font-bold text-xs uppercase tracking-wide">
                 View Details
-                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i>
               </div>
             </div>
           </a>
         ))}
       </div>
-      <div class="text-center mt-6">
+      <div class="text-center mt-4">
         <a href="/services/category/temple-tours" class="inline-flex items-center text-red-600 font-bold text-sm hover:text-red-700 transition">
           View All <i class="fas fa-arrow-right ml-2"></i>
         </a>
@@ -86,33 +86,33 @@ const tourImages: Record<string, string> = {
 
     <!-- SECTION 2: POPULAR DESTINATIONS -->
     <div>
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 inline-block relative mb-4">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 inline-block relative mb-3">
           Popular Destinations
-          <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-blue-600 rounded-full"></div>
+          <div class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-600 rounded-full"></div>
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+        <p class="text-base text-gray-600 max-w-2xl mx-auto mt-2">
           Explore heritage sites, beaches, and city tours.
         </p>
       </div>
 
-      <div class="flex overflow-x-auto gap-6 px-2 pb-8 scrollbar-hide snap-x">
+      <div class="flex overflow-x-auto gap-4 px-2 pb-6 scrollbar-hide snap-x">
         {popularDestinations.map((tour) => (
-          <a href={`/services/${tour.slug}`} class="flex-none w-80 snap-center bg-white rounded-2xl shadow-md overflow-hidden group cursor-pointer hover:shadow-xl transition">
-            <div class="h-48 overflow-hidden relative">
+          <a href={`/services/${tour.slug}`} class="flex-none w-64 sm:w-72 snap-center bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-md transition">
+            <div class="h-36 sm:h-40 overflow-hidden relative">
               <img 
                 src={tourImages[tour.slug] || "https://images.unsplash.com/photo-1596700414605-e45f1b1c7c9a?q=80&w=600"} 
                 alt={tour.title}
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-700" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700" 
               />
-              <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-sm">DESTINATION</span>
+              <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">DESTINATION</span>
             </div>
-            <div class="p-5">
-              <h3 class="font-bold text-lg mb-2 text-gray-900 line-clamp-1">{tour.title}</h3>
-              <p class="text-sm text-gray-500 mb-4 line-clamp-2">{tour.overview}</p>
-              <div class="flex items-center text-blue-600 font-bold text-sm uppercase tracking-wide">
+            <div class="p-4">
+              <h3 class="font-bold text-base text-gray-900 mb-1 line-clamp-1">{tour.title}</h3>
+              <p class="text-xs text-gray-500 mb-3 line-clamp-2">{tour.overview}</p>
+              <div class="flex items-center text-blue-600 font-bold text-xs uppercase tracking-wide">
                 View Details
-                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i>
               </div>
             </div>
           </a>

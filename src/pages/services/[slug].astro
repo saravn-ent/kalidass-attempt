@@ -28,9 +28,39 @@ const tourImages = {
 };
 
 const heroImage = tourImages[service.slug];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": service.title,
+  "description": service.overview,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Kalidass Travels",
+    "image": "https://kalidasstravels.in/wp-content/uploads/2025/11/airavatesvara-temple-1654590752_541a0582f2c9f6d5530a.webp",
+    "telephone": "+919092303060",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Chennai"
+  },
+  "url": Astro.url.href
+};
 ---
 
-<Layout title={`${service.title} - Kalidass Travels`}>
+<Layout 
+  title={`${service.title} - Kalidass Travels`}
+  description={service.overview}
+  image={heroImage}
+  type="article"
+  schema={schema}
+>
   <main class="bg-gray-50 min-h-screen pb-20">
     <!-- Hero Header -->
     <div class="bg-black text-white pt-32 pb-16 px-6 relative overflow-hidden">

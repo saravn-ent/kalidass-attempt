@@ -10,9 +10,30 @@ import Drivers from '../components/Drivers.astro';
 import Reviews from '../components/Reviews.astro';
 import TariffCalculator from '../components/TariffCalculator.astro';
 import SafetySection from '../components/SafetySection.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kalidass Travels",
+  "image": "https://kalidasstravels.in/wp-content/uploads/2025/11/airavatesvara-temple-1654590752_541a0582f2c9f6d5530a.webp",
+  "telephone": "+919092303060",
+  "email": "bookings@kalidasstravels.in",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chennai",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "url": "https://kalidasstravels.in",
+  "priceRange": "₹₹"
+};
 ---
 
-<Layout title="Kalidass Travels - Premium Travel Experience in South India">
+<Layout 
+  title="Kalidass Travels - Premium Travel Experience in South India"
+  description="Trusted travel partner in Chennai for Temple Tours, Corporate Travel, and Outstation Cabs. Verified drivers, transparent pricing, and 24/7 support."
+  schema={schema}
+>
   <Hero />
   <BookingPanel />
   <Services />
