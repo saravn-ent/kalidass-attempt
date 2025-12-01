@@ -354,8 +354,9 @@ import tnBusFares from '../data/tnBusFares.json';
         }
 
         // Update UI
+        const displayDist = activeTab === 'round' ? dist * 2 : dist;
         document.getElementById('total-price').innerText = `₹${total}`;
-        document.getElementById('distance-display').innerText = `${dist} km`;
+        document.getElementById('distance-display').innerText = `${displayDist} km`;
         document.getElementById('duration-display').innerText = duration;
         document.getElementById('breakdown-list').innerHTML = breakdownHTML;
         
