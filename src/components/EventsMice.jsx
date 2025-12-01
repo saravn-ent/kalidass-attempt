@@ -35,6 +35,7 @@ const FleetRow = ({ vehicle, seats, package12hr, extraKm, features }) => (
         <td className="p-5 align-top">
             <div className="text-sm text-slate-700 font-medium">Extra Km: {extraKm}</div>
             <div className="text-xs text-slate-500 mt-1">Day Bata Included</div>
+            <div className="text-xs text-slate-500 mt-0.5">+ Tolls & Parking</div>
         </td>
         <td className="p-5 align-top hidden sm:table-cell">
             <ul className="text-sm text-slate-600 space-y-1">
@@ -231,10 +232,10 @@ export default function EventsMice() {
         };
 
         // Draw Rows
-        drawRow('Tempo Traveller (14)', '₹5,500', 'Extra Km: ₹22/km\nDay Bata Included', 'Pushback Seats, AC Vents', true);
-        drawRow('Mini Bus (25)', '₹9,500', 'Extra Km: ₹35/km\nDay Bata Included', '2+2 Seating, PA System');
-        drawRow('Volvo / Benz Coach (45)', '₹22,000', 'Extra Km: ₹65/km\nDay Bata Included', 'Air Suspension, Onboard Toilet');
-        drawRow('Innova Crysta (7)', '₹4,500', 'Extra Km: ₹22/km\nDay Bata Included', 'VIP Guest Movement, Captain Seats');
+        drawRow('Tempo Traveller / Urbania (12)', '₹7,500', 'Extra Km: ₹22/km\nDay Bata Included\n+ Tolls & Parking', 'Pushback Seats, AC Vents', true);
+        drawRow('Urbania (21) / Mini Bus', '₹10,000', 'Extra Km: ₹35/km\nDay Bata Included\n+ Tolls & Parking', '2+2 Seating, PA System');
+        drawRow('Volvo / Benz Coach (45)', '₹18,000', 'Extra Km: ₹65/km\nDay Bata Included\n+ Tolls & Parking', 'Air Suspension, Onboard Toilet');
+        drawRow('Innova Crysta (7)', '₹7,500', 'Extra Km: ₹22/km\nDay Bata Included\n+ Tolls & Parking', 'VIP Guest Movement, Captain Seats');
 
         // Vertical column separators
         doc.setDrawColor(220, 220, 220);
@@ -394,30 +395,30 @@ export default function EventsMice() {
                             </thead>
                             <tbody className="divide-y divide-slate-100">
                                 <FleetRow
-                                    vehicle="Tempo Traveller"
-                                    seats="14"
-                                    package12hr="₹5,500"
+                                    vehicle="Tempo Traveller / Urbania"
+                                    seats="12"
+                                    package12hr="₹7,500"
                                     extraKm="₹22 / km"
                                     features={["Pushback Seats", "AC Vents per seat", "Ample Luggage"]}
                                 />
                                 <FleetRow
-                                    vehicle="Mini Bus"
-                                    seats="25"
-                                    package12hr="₹9,500"
+                                    vehicle="Urbania / Mini Bus"
+                                    seats="21"
+                                    package12hr="₹10,000"
                                     extraKm="₹35 / km"
                                     features={["2+2 Seating", "PA System / Mic", "Aisle Space"]}
                                 />
                                 <FleetRow
                                     vehicle="Volvo / Benz Coach"
                                     seats="45"
-                                    package12hr="₹22,000"
+                                    package12hr="₹18,000"
                                     extraKm="₹65 / km"
                                     features={["Air Suspension", "Reclining Seats", "Onboard Toilet"]}
                                 />
                                 <FleetRow
                                     vehicle="Innova Crysta"
                                     seats="7"
-                                    package12hr="₹4,500"
+                                    package12hr="₹7,500"
                                     extraKm="₹22 / km"
                                     features={["VIP Guest Movement", "Captain Seats", "Fast Transit"]}
                                 />

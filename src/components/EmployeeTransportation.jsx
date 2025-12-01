@@ -213,7 +213,7 @@ export default function EmployeeTransportation() {
 
         // Column headers
         doc.text('Vehicle Type', 25, yPos + 6.5);
-        doc.text('Price Breakdown', 70, yPos + 6.5);
+        doc.text('Package Inclusions', 70, yPos + 6.5);
         doc.text('Duty Hours', 120, yPos + 6.5);
         doc.text('Fuel Policy', 155, yPos + 6.5);
 
@@ -249,13 +249,13 @@ export default function EmployeeTransportation() {
             doc.setTextColor(100, 100, 100);
             doc.text('(+ GST)', 42, yPos + 18);
 
-            // Column 2: Price Breakdown
+            // Column 2: Package Inclusions (Replaced Breakdown)
             doc.setFontSize(7);
             doc.setTextColor(60, 60, 60);
             doc.setFont('helvetica', 'normal');
-            doc.text(`Base: ${breakdown.base}`, 70, yPos + 7);
-            doc.text(`Driver: ${breakdown.driver}`, 70, yPos + 12);
-            doc.text(`Maint: ${breakdown.maint}`, 70, yPos + 17);
+            doc.text('• Vehicle Rent', 70, yPos + 7);
+            doc.text('• Professional Driver', 70, yPos + 12);
+            doc.text('• Maintenance & Insurance', 70, yPos + 17);
             doc.setFontSize(6);
             doc.setTextColor(100, 100, 100);
             doc.text('(Monthly Fixed)', 70, yPos + 22);
@@ -288,23 +288,23 @@ export default function EmployeeTransportation() {
         drawVehicleRow(
             'Sedan',
             'Dzire / Etios / Aura',
-            '₹42,000',
-            { base: '₹32,000', driver: '₹8,000', maint: '₹2,000' },
+            '₹52,000',
+            {},
             true
         );
 
         drawVehicleRow(
             'SUV',
             'Innova Crysta / Hycross',
-            '₹65,000',
-            { base: '₹48,000', driver: '₹13,000', maint: '₹4,000' }
+            '₹75,000',
+            {}
         );
 
         drawVehicleRow(
             'Tempo Traveller',
             'Force Urbania / Traveller (12+)',
-            '₹78,000',
-            { base: '₹58,000', driver: '₹15,000', maint: '₹5,000' }
+            '₹90,000',
+            {}
         );
 
         // Vertical column separators
@@ -463,7 +463,7 @@ export default function EmployeeTransportation() {
                                 <thead className="bg-slate-900 text-white">
                                     <tr>
                                         <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Vehicle Type</th>
-                                        <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Price Breakdown<br /><span className="text-xs font-normal text-slate-300">(Chennai)</span></th>
+                                        <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Package Inclusions<br /><span className="text-xs font-normal text-slate-300">(Chennai)</span></th>
                                         <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Duty Hours</th>
                                         <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Fuel Policy</th>
                                     </tr>
@@ -485,28 +485,22 @@ export default function EmployeeTransportation() {
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-2xl font-bold text-green-600 mb-2">
-                                                ₹42,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
+                                                ₹52,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
                                             </div>
-                                            <details className="group">
-                                                <summary className="cursor-pointer text-blue-600 font-semibold text-sm flex items-center gap-2 hover:text-blue-700">
-                                                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
-                                                    <span>View Price Breakdown</span>
-                                                </summary>
-                                                <div className="mt-3 space-y-1 text-sm text-slate-600 ml-5 bg-slate-50 p-3 rounded-lg">
-                                                    <div className="flex justify-between">
-                                                        <span>Base Rent:</span>
-                                                        <span className="font-semibold">₹32,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Driver Salary:</span>
-                                                        <span className="font-semibold">₹8,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Maintenance:</span>
-                                                        <span className="font-semibold">₹2,000</span>
-                                                    </div>
+                                            <div className="text-sm text-slate-600 space-y-1">
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Vehicle Rent</span>
                                                 </div>
-                                            </details>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Professional Driver</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Maintenance & Insurance</span>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-slate-700 font-medium">10 Hrs / Day</div>
@@ -533,28 +527,22 @@ export default function EmployeeTransportation() {
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-2xl font-bold text-green-600 mb-2">
-                                                ₹65,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
+                                                ₹75,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
                                             </div>
-                                            <details className="group">
-                                                <summary className="cursor-pointer text-blue-600 font-semibold text-sm flex items-center gap-2 hover:text-blue-700">
-                                                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
-                                                    <span>View Price Breakdown</span>
-                                                </summary>
-                                                <div className="mt-3 space-y-1 text-sm text-slate-600 ml-5 bg-slate-50 p-3 rounded-lg">
-                                                    <div className="flex justify-between">
-                                                        <span>Base Rent:</span>
-                                                        <span className="font-semibold">₹48,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Driver Salary:</span>
-                                                        <span className="font-semibold">₹13,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Maintenance:</span>
-                                                        <span className="font-semibold">₹4,000</span>
-                                                    </div>
+                                            <div className="text-sm text-slate-600 space-y-1">
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Vehicle Rent</span>
                                                 </div>
-                                            </details>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Professional Driver</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Maintenance & Insurance</span>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-slate-700 font-medium">10 Hrs / Day</div>
@@ -581,28 +569,22 @@ export default function EmployeeTransportation() {
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-2xl font-bold text-green-600 mb-2">
-                                                ₹78,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
+                                                ₹90,000 <span className="text-sm text-slate-500 font-normal">(+ GST)</span>
                                             </div>
-                                            <details className="group">
-                                                <summary className="cursor-pointer text-blue-600 font-semibold text-sm flex items-center gap-2 hover:text-blue-700">
-                                                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
-                                                    <span>View Price Breakdown</span>
-                                                </summary>
-                                                <div className="mt-3 space-y-1 text-sm text-slate-600 ml-5 bg-slate-50 p-3 rounded-lg">
-                                                    <div className="flex justify-between">
-                                                        <span>Base Rent:</span>
-                                                        <span className="font-semibold">₹58,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Driver Salary:</span>
-                                                        <span className="font-semibold">₹15,000</span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span>Maintenance:</span>
-                                                        <span className="font-semibold">₹5,000</span>
-                                                    </div>
+                                            <div className="text-sm text-slate-600 space-y-1">
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Vehicle Rent</span>
                                                 </div>
-                                            </details>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Professional Driver</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <CheckCircle className="w-4 h-4 text-green-500" />
+                                                    <span>Maintenance & Insurance</span>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td className="px-6 py-6">
                                             <div className="text-slate-700 font-medium">10 Hrs / Day</div>

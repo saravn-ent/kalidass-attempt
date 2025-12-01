@@ -12,8 +12,14 @@ import tnBusFares from '../data/tnBusFares.json';
         <Calculator className="w-5 h-5 text-white" />
       </div>
       <div>
-        <h2 class="text-xl font-bold text-slate-900">Acting Driver Cost</h2>
-        <p class="text-xs text-slate-500">Calculate Bata & Stay</p>
+        <h2 class="text-xl font-bold text-slate-900">
+          <span class="lang-en">Acting Driver Cost</span>
+          <span class="lang-ta hidden">ஓட்டுநர் கட்டணம்</span>
+        </h2>
+        <p class="text-xs text-slate-500">
+          <span class="lang-en">Calculate Bata & Stay</span>
+          <span class="lang-ta hidden">பேட்டா & தங்குமிடம் கணக்கிட</span>
+        </p>
       </div>
     </div>
   </div>
@@ -21,8 +27,14 @@ import tnBusFares from '../data/tnBusFares.json';
   <!-- Tabs -->
   <div class="px-6 mb-6">
     <div class="bg-slate-100 p-1 rounded-xl flex">
-      <button id="tab-oneway" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all">One Way Drop</button>
-      <button id="tab-round" class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all">Round Trip</button>
+      <button id="tab-oneway" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all">
+        <span class="lang-en">One Way Drop</span>
+        <span class="lang-ta hidden">ஒரு வழி பயணம்</span>
+      </button>
+      <button id="tab-round" class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all">
+        <span class="lang-en">Round Trip</span>
+        <span class="lang-ta hidden">இரு வழி பயணம்</span>
+      </button>
     </div>
   </div>
 
@@ -33,7 +45,10 @@ import tnBusFares from '../data/tnBusFares.json';
       
       <!-- Pickup -->
       <div>
-        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Pickup Location</label>
+        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
+          <span class="lang-en">Pickup Location</span>
+          <span class="lang-ta hidden">புறப்படும் இடம்</span>
+        </label>
         <div class="relative group">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <MapPin className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -50,7 +65,10 @@ import tnBusFares from '../data/tnBusFares.json';
 
       <!-- Drop -->
       <div>
-        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Drop Location</label>
+        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
+          <span class="lang-en">Drop Location</span>
+          <span class="lang-ta hidden">சேரும் இடம்</span>
+        </label>
         <div class="relative group">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Navigation className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -70,7 +88,10 @@ import tnBusFares from '../data/tnBusFares.json';
         
         <!-- Duration -->
         <div>
-          <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Total Duration (Days)</label>
+          <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
+            <span class="lang-en">Total Duration (Days)</span>
+            <span class="lang-ta hidden">மொத்த நாட்கள்</span>
+          </label>
           <div class="relative group">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Calendar className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -92,8 +113,14 @@ import tnBusFares from '../data/tnBusFares.json';
             <Check className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 pointer-events-none" />
           </div>
           <div>
-            <span class="block text-sm font-semibold text-slate-700">I will provide Driver Stay</span>
-            <span class="block text-xs text-slate-500 mt-0.5">Select this if you give the driver a place to sleep.</span>
+            <span class="block text-sm font-semibold text-slate-700">
+              <span class="lang-en">I will provide Driver Stay</span>
+              <span class="lang-ta hidden">ஓட்டுநர் தங்குமிடம் நான் தருகிறேன்</span>
+            </span>
+            <span class="block text-xs text-slate-500 mt-0.5">
+              <span class="lang-en">Select this if you give the driver a place to sleep.</span>
+              <span class="lang-ta hidden">ஓட்டுநருக்கு தூங்கும் இடம் கொடுத்தால் இதை தேர்வு செய்யவும்.</span>
+            </span>
           </div>
         </label>
 
@@ -103,7 +130,8 @@ import tnBusFares from '../data/tnBusFares.json';
 
     <!-- Calculate Button -->
     <button id="calc-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:shadow-xl active:scale-[0.98]">
-      Calculate Estimate <ArrowRight className="w-4 h-4 ml-2" />
+      <span class="lang-en flex items-center">Calculate Estimate <ArrowRight className="w-4 h-4 ml-2" /></span>
+      <span class="lang-ta hidden flex items-center">மதிப்பீட்டை கணக்கிடு <ArrowRight className="w-4 h-4 ml-2" /></span>
     </button>
 
     <!-- Results Section -->
@@ -111,12 +139,18 @@ import tnBusFares from '../data/tnBusFares.json';
       
       <div class="flex justify-between items-end mb-6">
         <div>
-          <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Estimated Total</p>
+          <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+            <span class="lang-en">Estimated Total</span>
+            <span class="lang-ta hidden">மொத்த மதிப்பீடு</span>
+          </p>
           <p class="text-4xl font-extrabold text-slate-900 tracking-tight" id="total-price">₹0</p>
         </div>
         <div class="text-right">
           <p class="text-sm font-bold text-slate-600" id="distance-display">0 km</p>
-          <p class="text-xs text-slate-400" id="duration-display">0 hrs Driving</p>
+          <p class="text-xs text-slate-400" id="duration-display">
+            <span class="lang-en">0 hrs Driving</span>
+            <span class="lang-ta hidden">0 மணி நேரம்</span>
+          </p>
         </div>
       </div>
 
@@ -127,7 +161,8 @@ import tnBusFares from '../data/tnBusFares.json';
       <div class="mt-6 p-3 bg-yellow-50 border border-yellow-100 rounded-lg flex gap-3">
         <Info className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
         <p class="text-xs text-yellow-800 leading-relaxed">
-          Rate is per calendar day. Providing accommodation saves you <span class="font-bold">₹500/night!</span>
+          <span class="lang-en">Rate is per calendar day. Providing accommodation saves you <span class="font-bold">₹500/night!</span></span>
+          <span class="lang-ta hidden">கட்டணம் ஒரு நாளுக்கு. தங்குமிடம் கொடுத்தால் <span class="font-bold">₹500 மிச்சம்!</span></span>
         </p>
       </div>
 
@@ -297,7 +332,7 @@ import tnBusFares from '../data/tnBusFares.json';
 
       function calculateAndShow(dist, duration, busFare) {
         // Rates
-        const BATA_PER_DAY = 1000;
+        const BATA_PER_DAY = 1200;
         const FOOD_PER_DAY = 300;
         const STAY_PER_NIGHT = 500;
 
@@ -310,15 +345,24 @@ import tnBusFares from '../data/tnBusFares.json';
 
           breakdownHTML = `
             <div class="flex justify-between py-2 border-b border-slate-50">
-              <span class="text-slate-600">Driver Bata (1 Day)</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Driver Bata (1 Day)</span>
+                <span class="lang-ta">ஓட்டுநர் பேட்டா (1 நாள்)</span>
+              </span>
               <span class="font-bold text-slate-900">₹${BATA_PER_DAY}</span>
             </div>
             <div class="flex justify-between py-2 border-b border-slate-50">
-              <span class="text-slate-600">Food Allowance</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Food Allowance</span>
+                <span class="lang-ta">உணவு படி</span>
+              </span>
               <span class="font-bold text-slate-900">₹${FOOD_PER_DAY}</span>
             </div>
             <div class="flex justify-between py-2">
-              <span class="text-slate-600">Return Bus Ticket (SETC/Est)</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Return Bus Ticket (SETC/Est)</span>
+                <span class="lang-ta">திரும்பும் பேருந்து டிக்கெட் (மதிப்பீடு)</span>
+              </span>
               <span class="font-bold text-slate-900">₹${busFare}</span>
             </div>
           `;
@@ -337,16 +381,25 @@ import tnBusFares from '../data/tnBusFares.json';
 
           breakdownHTML = `
             <div class="flex justify-between py-2 border-b border-slate-50">
-              <span class="text-slate-600">Driver Bata (${days} Days)</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Driver Bata (${days} Days)</span>
+                <span class="lang-ta">ஓட்டுநர் பேட்டா (${days} நாட்கள்)</span>
+              </span>
               <span class="font-bold text-slate-900">₹${totalBata}</span>
             </div>
             <div class="flex justify-between py-2 border-b border-slate-50">
-              <span class="text-slate-600">Food Allowance (${days} Days)</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Food Allowance (${days} Days)</span>
+                <span class="lang-ta">உணவு படி (${days} நாட்கள்)</span>
+              </span>
               <span class="font-bold text-slate-900">₹${totalFood}</span>
             </div>
             ${nights > 0 ? `
             <div class="flex justify-between py-2 ${provideStay ? 'text-slate-400 line-through' : ''}">
-              <span class="text-slate-600">Stay Allowance (${nights} Nights)</span>
+              <span class="text-slate-600">
+                <span class="lang-en">Stay Allowance (${nights} Nights)</span>
+                <span class="lang-ta">தங்கும் படி (${nights} இரவுகள்)</span>
+              </span>
               <span class="font-bold text-slate-900">₹${provideStay ? 0 : totalStay}</span>
             </div>
             ` : ''}

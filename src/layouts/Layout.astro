@@ -97,6 +97,11 @@ const fullImage = ogImage
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <style is:global>
+      /* Language Toggle Styles */
+      body.lang-ta .lang-en { display: none !important; }
+      body:not(.lang-ta) .lang-ta { display: none !important; }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -644,14 +649,6 @@ const fullImage = ogImage
       function toggleLanguage() {
         const isTamil = document.body.classList.toggle("lang-ta");
         localStorage.setItem("preferred-lang", isTamil ? "ta" : "en");
-
-        // Toggle visibility of all lang elements
-        document.querySelectorAll(".lang-en").forEach((el) => {
-          el.classList.toggle("hidden", isTamil);
-        });
-        document.querySelectorAll(".lang-ta").forEach((el) => {
-          el.classList.toggle("hidden", !isTamil);
-        });
       }
 
       // Initialize Language
@@ -659,12 +656,6 @@ const fullImage = ogImage
         const savedLang = localStorage.getItem("preferred-lang");
         if (savedLang === "ta") {
           document.body.classList.add("lang-ta");
-          document
-            .querySelectorAll(".lang-en")
-            .forEach((el) => el.classList.add("hidden"));
-          document
-            .querySelectorAll(".lang-ta")
-            .forEach((el) => el.classList.remove("hidden"));
         }
       }
 
