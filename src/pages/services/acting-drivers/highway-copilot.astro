@@ -1,7 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import DriverFeeEstimator from "../../../components/DriverFeeEstimator.astro";
-import ActingDriverTariff from "../../../components/ActingDriverTariff.jsx";
 import Drivers from "../../../components/Drivers.astro";
 import HighwayCopilotFaq from "../../../components/HighwayCopilotFaq.jsx";
 import { 
@@ -47,13 +46,6 @@ import {
     <section class="relative z-20 -mt-24 px-4 pb-12">
       <div class="max-w-md mx-auto">
         <DriverFeeEstimator />
-      </div>
-    </section>
-
-    {/* TARIFF CARD SECTION */}
-    <section class="py-8 bg-white">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ActingDriverTariff client:visible />
       </div>
     </section>
 

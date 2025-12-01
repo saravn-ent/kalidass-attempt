@@ -1,6 +1,7 @@
 ---
-import { MapPin, Navigation, Calendar, Bed, Info, Calculator, ArrowRight, Check } from 'lucide-react';
+import { MapPin, Navigation, Calendar, Bed, Info, Calculator, ArrowRight, Check, ChevronDown } from 'lucide-react';
 import tnBusFares from '../data/tnBusFares.json';
+import ActingDriverTariff from './ActingDriverTariff.jsx';
 ---
 
 <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden max-w-md mx-auto font-sans">
@@ -166,6 +167,20 @@ import tnBusFares from '../data/tnBusFares.json';
         </p>
       </div>
 
+    </div>
+
+    <!-- Tariff Card Toggle -->
+    <div class="pt-2">
+        <details class="group">
+            <summary class="flex items-center justify-between cursor-pointer text-xs font-bold text-indigo-600 hover:text-indigo-700 select-none py-2">
+                <span class="lang-en">View Tariff Card</span>
+                <span class="lang-ta hidden">கட்டண அட்டை காண்க</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+            </summary>
+            <div class="mt-2">
+                <ActingDriverTariff client:visible />
+            </div>
+        </details>
     </div>
 
   </div>
@@ -369,7 +384,16 @@ import tnBusFares from '../data/tnBusFares.json';
 
         } else {
           // Round Trip Logic
-          const days = parseInt(durationInput.value) || 1;
+          let days = parseInt(durationInput.value) || 1;
+          
+          // Auto-correct days if distance > 250km
+          const totalRoundTripDist = dist * 2;
+          if (totalRoundTripDist > 250 && days < 2) {
+            days = 2;
+            durationInput.value = "2";
+            alert("For round trips over 250km, minimum 2 days are required for driver safety.");
+          }
+
           const nights = Math.max(0, days - 1); // Nights are usually Days - 1
           const provideStay = stayCheckbox.checked;
 

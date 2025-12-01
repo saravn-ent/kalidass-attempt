@@ -27,6 +27,11 @@ const FleetRow = ({ vehicle, seats, package12hr, extras, features }) => (
             <div className="inline-flex items-center mt-1 text-slate-500 text-sm bg-slate-100 px-2 py-0.5 rounded">
                 <Users className="w-3 h-3 mr-1" /> {seats} Seater
             </div>
+            {/* Mobile View for Price */}
+            <div className="md:hidden mt-3">
+                <div className="font-bold text-slate-900 text-xl">{package12hr}</div>
+                <div className="text-xs text-slate-500">Full Day (12 Hrs)</div>
+            </div>
         </td>
         <td className="p-5 align-top hidden md:table-cell">
             <div className="font-bold text-slate-900 text-xl">{package12hr}</div>
