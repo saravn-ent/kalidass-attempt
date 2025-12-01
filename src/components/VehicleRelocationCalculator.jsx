@@ -4,7 +4,8 @@ import {
   Navigation, 
   Calculator,
   ArrowRight,
-  Info
+  Info,
+  Car
 } from 'lucide-react';
 import tnBusFares from '../data/tnBusFares.json';
 
@@ -143,20 +144,27 @@ export default function VehicleRelocationCalculator() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-2xl text-slate-900">
-       <div className="flex items-center gap-3 mb-6">
-         <div className="p-2 bg-indigo-600 rounded-lg">
-           <Calculator className="w-5 h-5 text-white" />
-         </div>
+    <div className="w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden max-w-md mx-auto font-sans p-6 text-slate-900">
+       <div className="flex flex-col items-center text-center gap-2 mb-6">
+         <Car className="w-10 h-10 text-green-600" />
          <div>
-           <h3 className="font-bold text-slate-900 text-lg">Get Instant Quote</h3>
-           <p className="text-xs text-slate-500">Estimate your relocation cost</p>
+           <h3 className="font-bold text-slate-900 text-xl">
+             <span className="lang-en">Vehicle Relocation Quote</span>
+             <span className="lang-ta">வாகன இடமாற்ற மதிப்பீடு</span>
+           </h3>
+           <p className="text-xs text-slate-500">
+             <span className="lang-en">Estimate your relocation cost</span>
+             <span className="lang-ta">உங்கள் இடமாற்ற செலவை மதிப்பிடுங்கள்</span>
+           </p>
          </div>
        </div>
        
        <div className="space-y-4">
          <div>
-           <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Pickup City</label>
+           <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
+             <span className="lang-en">Pickup City</span>
+             <span className="lang-ta">புறப்படும் நகரம்</span>
+           </label>
            <div className="relative">
              <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
              <input 
@@ -170,7 +178,10 @@ export default function VehicleRelocationCalculator() {
          </div>
 
          <div>
-           <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Drop City</label>
+           <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
+             <span className="lang-en">Drop City</span>
+             <span className="lang-ta">சேரும் நகரம்</span>
+           </label>
            <div className="relative">
              <Navigation className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
              <input 
@@ -188,13 +199,29 @@ export default function VehicleRelocationCalculator() {
            disabled={loading}
            className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition-all flex items-center justify-center shadow-lg disabled:opacity-70"
          >
-           {loading ? 'Calculating...' : <span className="flex items-center">Calculate Cost <ArrowRight className="w-4 h-4 ml-2" /></span>}
+           {loading ? (
+             <>
+               <span className="lang-en">Calculating...</span>
+               <span className="lang-ta">கணக்கிடுகிறது...</span>
+             </>
+           ) : (
+             <span className="flex items-center">
+               <span className="lang-en">Calculate Cost</span>
+               <span className="lang-ta">செலவை கணக்கிடு</span>
+               <ArrowRight className="w-4 h-4 ml-2" />
+             </span>
+           )}
          </button>
 
          <div className="mt-3 p-3 bg-yellow-50 border border-yellow-100 rounded-lg flex gap-2 items-start">
            <Info className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
            <p className="text-xs text-yellow-800 leading-relaxed font-medium">
-             <span className="font-bold">Note:</span> Fuel & Tolls are extra. Driver travel cost is reimbursed at actuals (Bus/Train).
+             <span className="font-bold">
+               <span className="lang-en">Note:</span>
+               <span className="lang-ta">குறிப்பு:</span>
+             </span>
+             <span className="lang-en"> Fuel & Tolls are extra. Driver travel cost is reimbursed at actuals (Bus/Train).</span>
+             <span className="lang-ta"> எரிபொருள் & சுங்கச்சாவடி கட்டணம் தனி. ஓட்டுநர் பயண செலவு (பேருந்து/ரயில்) திரும்ப வழங்கப்படும்.</span>
            </p>
          </div>
        </div>
@@ -203,7 +230,10 @@ export default function VehicleRelocationCalculator() {
          <div className="mt-6 pt-6 border-t border-slate-100 animate-in fade-in slide-in-from-top-2">
            <div className="flex justify-between items-end mb-4">
              <div>
-               <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Estimated Total</p>
+               <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">
+                 <span className="lang-en">Estimated Total</span>
+                 <span className="lang-ta">மொத்த மதிப்பீடு</span>
+               </p>
                <p className="text-3xl font-extrabold text-slate-900 tracking-tight">₹{result.total}</p>
              </div>
              <div className="text-right">
@@ -214,15 +244,24 @@ export default function VehicleRelocationCalculator() {
 
            <div className="space-y-2 text-sm bg-slate-50 p-3 rounded-lg">
              <div className="flex justify-between">
-               <span className="text-slate-600">Driver Bata</span>
+               <span className="text-slate-600">
+                 <span className="lang-en">Driver Bata</span>
+                 <span className="lang-ta">ஓட்டுநர் பேட்டா</span>
+               </span>
                <span className="font-bold text-slate-900">₹{result.breakdown.bata}</span>
              </div>
              <div className="flex justify-between">
-               <span className="text-slate-600">Food Allowance</span>
+               <span className="text-slate-600">
+                 <span className="lang-en">Food Allowance</span>
+                 <span className="lang-ta">உணவு படி</span>
+               </span>
                <span className="font-bold text-slate-900">₹{result.breakdown.food}</span>
              </div>
              <div className="flex justify-between">
-               <span className="text-slate-600">Return Travel (Est)</span>
+               <span className="text-slate-600">
+                 <span className="lang-en">Return Travel (Est)</span>
+                 <span className="lang-ta">திரும்பும் பயணம் (மதிப்பீடு)</span>
+               </span>
                <span className="font-bold text-slate-900">₹{result.breakdown.bus}</span>
              </div>
            </div>

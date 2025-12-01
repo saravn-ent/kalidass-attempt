@@ -1,24 +1,22 @@
 ---
-import { MapPin, Navigation, Calendar, Bed, Info, Calculator, ArrowRight, Check, ChevronDown } from 'lucide-react';
+import { MapPin, Navigation, Calendar, Bed, Info, Calculator, ArrowRight, Check, ChevronDown, User } from 'lucide-react';
 import tnBusFares from '../data/tnBusFares.json';
 ---
 
-<div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden max-w-md mx-auto font-sans">
+<div class="w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden max-w-md mx-auto font-sans">
   
   <!-- Header -->
   <div class="p-6 pb-2">
-    <div class="flex items-center gap-3 mb-1">
-      <div class="p-2 bg-indigo-600 rounded-lg">
-        <Calculator className="w-5 h-5 text-white" />
-      </div>
+    <div class="flex flex-col items-center text-center gap-2 mb-1">
+      <User className="w-10 h-10 text-indigo-600" />
       <div>
         <h2 class="text-xl font-bold text-slate-900">
           <span class="lang-en">Acting Driver Cost</span>
-          <span class="lang-ta hidden">ஓட்டுநர் கட்டணம்</span>
+          <span class="lang-ta">ஓட்டுநர் கட்டணம்</span>
         </h2>
         <p class="text-xs text-slate-500">
           <span class="lang-en">Calculate Bata & Stay</span>
-          <span class="lang-ta hidden">பேட்டா & தங்குமிடம் கணக்கிட</span>
+          <span class="lang-ta">பேட்டா & தங்குமிடம் கணக்கிட</span>
         </p>
       </div>
     </div>
@@ -29,11 +27,11 @@ import tnBusFares from '../data/tnBusFares.json';
     <div class="bg-slate-100 p-1 rounded-xl flex">
       <button id="tab-oneway" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all">
         <span class="lang-en">One Way Drop</span>
-        <span class="lang-ta hidden">ஒரு வழி பயணம்</span>
+        <span class="lang-ta">ஒரு வழி பயணம்</span>
       </button>
       <button id="tab-round" class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all">
         <span class="lang-en">Round Trip</span>
-        <span class="lang-ta hidden">இரு வழி பயணம்</span>
+        <span class="lang-ta">இரு வழி பயணம்</span>
       </button>
     </div>
   </div>
@@ -47,7 +45,7 @@ import tnBusFares from '../data/tnBusFares.json';
       <div>
         <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
           <span class="lang-en">Pickup Location</span>
-          <span class="lang-ta hidden">புறப்படும் இடம்</span>
+          <span class="lang-ta">புறப்படும் இடம்</span>
         </label>
         <div class="relative group">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -67,7 +65,7 @@ import tnBusFares from '../data/tnBusFares.json';
       <div>
         <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
           <span class="lang-en">Drop Location</span>
-          <span class="lang-ta hidden">சேரும் இடம்</span>
+          <span class="lang-ta">சேரும் இடம்</span>
         </label>
         <div class="relative group">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -90,7 +88,7 @@ import tnBusFares from '../data/tnBusFares.json';
         <div>
           <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">
             <span class="lang-en">Total Duration (Days)</span>
-            <span class="lang-ta hidden">மொத்த நாட்கள்</span>
+            <span class="lang-ta">மொத்த நாட்கள்</span>
           </label>
           <div class="relative group">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -115,11 +113,11 @@ import tnBusFares from '../data/tnBusFares.json';
           <div>
             <span class="block text-sm font-semibold text-slate-700">
               <span class="lang-en">I will provide Driver Stay</span>
-              <span class="lang-ta hidden">ஓட்டுநர் தங்குமிடம் நான் தருகிறேன்</span>
+              <span class="lang-ta">ஓட்டுநர் தங்குமிடம் நான் தருகிறேன்</span>
             </span>
             <span class="block text-xs text-slate-500 mt-0.5">
               <span class="lang-en">Select this if you give the driver a place to sleep.</span>
-              <span class="lang-ta hidden">ஓட்டுநருக்கு தூங்கும் இடம் கொடுத்தால் இதை தேர்வு செய்யவும்.</span>
+              <span class="lang-ta">ஓட்டுநருக்கு தூங்கும் இடம் கொடுத்தால் இதை தேர்வு செய்யவும்.</span>
             </span>
           </div>
         </label>
@@ -131,7 +129,7 @@ import tnBusFares from '../data/tnBusFares.json';
     <!-- Calculate Button -->
     <button id="calc-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:shadow-xl active:scale-[0.98]">
       <span class="lang-en flex items-center">Calculate Estimate <ArrowRight className="w-4 h-4 ml-2" /></span>
-      <span class="lang-ta hidden flex items-center">மதிப்பீட்டை கணக்கிடு <ArrowRight className="w-4 h-4 ml-2" /></span>
+      <span class="lang-ta flex items-center">மதிப்பீட்டை கணக்கிடு <ArrowRight className="w-4 h-4 ml-2" /></span>
     </button>
 
     <!-- Results Section -->
@@ -141,7 +139,7 @@ import tnBusFares from '../data/tnBusFares.json';
         <div>
           <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">
             <span class="lang-en">Estimated Total</span>
-            <span class="lang-ta hidden">மொத்த மதிப்பீடு</span>
+            <span class="lang-ta">மொத்த மதிப்பீடு</span>
           </p>
           <p class="text-4xl font-extrabold text-slate-900 tracking-tight" id="total-price">₹0</p>
         </div>
@@ -149,7 +147,7 @@ import tnBusFares from '../data/tnBusFares.json';
           <p class="text-sm font-bold text-slate-600" id="distance-display">0 km</p>
           <p class="text-xs text-slate-400" id="duration-display">
             <span class="lang-en">0 hrs Driving</span>
-            <span class="lang-ta hidden">0 மணி நேரம்</span>
+            <span class="lang-ta">0 மணி நேரம்</span>
           </p>
         </div>
       </div>
@@ -162,7 +160,7 @@ import tnBusFares from '../data/tnBusFares.json';
         <Info className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
         <p class="text-xs text-yellow-800 leading-relaxed">
           <span class="lang-en">Rate is per calendar day. Providing accommodation saves you <span class="font-bold">₹500/night!</span></span>
-          <span class="lang-ta hidden">கட்டணம் ஒரு நாளுக்கு. தங்குமிடம் கொடுத்தால் <span class="font-bold">₹500 மிச்சம்!</span></span>
+          <span class="lang-ta">கட்டணம் ஒரு நாளுக்கு. தங்குமிடம் கொடுத்தால் <span class="font-bold">₹500 மிச்சம்!</span></span>
         </p>
       </div>
 
