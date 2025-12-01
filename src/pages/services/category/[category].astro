@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import serviceDetails from '../../../data/serviceDetails.json';
+import ActingDrivers from '../../../components/ActingDrivers.jsx';
 
 export async function getStaticPaths() {
   return [
@@ -97,7 +98,9 @@ const schema = {
   image={heroImage}
   schema={schema}
 >
-  {category === 'corporate' ? (
+  {category === 'acting-drivers' ? (
+    <ActingDrivers client:load />
+  ) : category === 'corporate' ? (
     <main class="bg-slate-50 min-h-screen font-sans">
       <!-- Corporate Hero Section -->
       <section class="relative bg-slate-900 text-white pt-32 pb-24 px-6 overflow-hidden">
@@ -129,15 +132,7 @@ const schema = {
         </div>
       </section>
 
-      <!-- Trusted By Strip -->
-      <section class="bg-white py-12 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-          <h3 class="text-center text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Trusted by Leading Organizations</h3>
-          <p class="text-center text-slate-600 max-w-3xl mx-auto">
-            Supporting Chennai's IT & Manufacturing sectors with 24/7 mobility solutions. Serving businesses from startups to established enterprises with reliable, compliant transport services.
-          </p>
-        </div>
-      </section>
+
 
       <!-- Main Service Grid (The Branch) -->
       <section id="branch-grid" class="max-w-7xl mx-auto px-6 -mt-16 relative z-30 pb-20">
@@ -167,12 +162,12 @@ const schema = {
 
           <!-- Card 2: On-Demand Business Travel -->
           <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
             <div class="relative z-10">
-              <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-indigo-200 shadow-lg">
+              <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-blue-200 shadow-lg">
                 <i class="fa-solid fa-briefcase"></i>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">On-Demand Business Travel</h3>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">On-Demand Business Travel</h3>
               <p class="text-slate-600 mb-6 leading-relaxed">
                 Flexible spot rentals for client visits, airport transfers, and inter-city travel. Book reliable sedans and SUVs instantly for your team.
               </p>
@@ -180,7 +175,7 @@ const schema = {
                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Airport Meet & Greet</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Hourly Packages</li>
               </ul>
-              <a href="/services/business-travel" class="inline-flex items-center text-indigo-600 font-semibold group-hover:gap-2 transition-all">
+              <a href="/services/business-travel" class="inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
                 Book a Ride <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
             </div>
@@ -209,12 +204,12 @@ const schema = {
 
           <!-- Card 4: Events & MICE Logistics -->
           <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
             <div class="relative z-10">
-              <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-orange-200 shadow-lg">
+              <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-blue-200 shadow-lg">
                 <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Events & MICE Logistics</h3>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Events & MICE Logistics</h3>
               <p class="text-slate-600 mb-6 leading-relaxed">
                 End-to-end transport management for corporate events, team offsites, and conferences. We handle bulk bookings with buses and tempo travellers.
               </p>
@@ -222,7 +217,7 @@ const schema = {
                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> On-site Coordinators</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Large Fleet Access</li>
               </ul>
-              <a href="/services/events-mice" class="inline-flex items-center text-orange-600 font-semibold group-hover:gap-2 transition-all">
+              <a href="/services/events-mice" class="inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
                 Plan Event <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
             </div>
@@ -231,68 +226,9 @@ const schema = {
         </div>
       </section>
 
-      <!-- Trust Indicators -->
-      <section class="bg-white py-20 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Leading Companies Choose Us</h2>
-            <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-          </div>
-          
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div class="p-6">
-              <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fa-solid fa-laptop-code text-3xl text-blue-600"></i>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">Unified Tech Dashboard</h3>
-              <p class="text-slate-600">Complete visibility over your transport operations. Track rides, manage rosters, and download invoices from a single admin panel.</p>
-            </div>
-            
-            <div class="p-6">
-              <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fa-solid fa-file-invoice-dollar text-3xl text-green-600"></i>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">GST Compliant Billing</h3>
-              <p class="text-slate-600">Hassle-free, 100% GST compliant monthly invoices with consolidated trip reports for your finance team.</p>
-            </div>
 
-            <div class="p-6">
-              <div class="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fa-solid fa-clipboard-check text-3xl text-purple-600"></i>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">100% Compliance</h3>
-              <p class="text-slate-600">Zero compromise on statutory requirements. All vehicles and drivers are fully compliant with state and central transport regulations.</p>
-            </div>
 
-            <div class="p-6">
-              <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fa-solid fa-tower-broadcast text-3xl text-red-600"></i>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">24/7 Command Center</h3>
-              <p class="text-slate-600">Our dedicated support team monitors every trip round-the-clock, ensuring rapid response to any on-road contingencies.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Footer CTA -->
-      <section id="contact-expert" class="bg-slate-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to upgrade your corporate travel experience?</h2>
-          <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
-            Join the network of companies that trust Kalidass Travels for safe, reliable, and efficient employee mobility.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+919092303060" class="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-lg transition-all">
-              <i class="fa-solid fa-phone"></i> Call Corporate Desk
-            </a>
-            <a href="mailto:bookings@kalidasstravels.in" class="inline-flex items-center justify-center gap-3 bg-transparent border border-slate-600 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-lg transition-all">
-              <i class="fa-solid fa-envelope"></i> Request Proposal
-            </a>
-          </div>
-          <p class="text-slate-400 text-sm mt-4">Direct line to B2B Account Manager (No waiting)</p>
-        </div>
-      </section>
     </main>
   ) : (
     <main class="bg-gray-50 min-h-screen py-20">

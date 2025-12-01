@@ -1,0 +1,366 @@
+---
+import { MapPin, Navigation, Calendar, Bed, Info, Calculator, ArrowRight, Check } from 'lucide-react';
+import tnBusFares from '../data/tnBusFares.json';
+---
+
+<div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden max-w-md mx-auto font-sans">
+  
+  <!-- Header -->
+  <div class="p-6 pb-2">
+    <div class="flex items-center gap-3 mb-1">
+      <div class="p-2 bg-indigo-600 rounded-lg">
+        <Calculator className="w-5 h-5 text-white" />
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-slate-900">Acting Driver Cost</h2>
+        <p class="text-xs text-slate-500">Calculate Bata & Stay</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="px-6 mb-6">
+    <div class="bg-slate-100 p-1 rounded-xl flex">
+      <button id="tab-oneway" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all">One Way Drop</button>
+      <button id="tab-round" class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all">Round Trip</button>
+    </div>
+  </div>
+
+  <div class="px-6 pb-8 space-y-5">
+    
+    <!-- Inputs -->
+    <div class="space-y-4">
+      
+      <!-- Pickup -->
+      <div>
+        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Pickup Location</label>
+        <div class="relative group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <MapPin className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
+          </div>
+          <input 
+            type="text" 
+            id="simple-pickup" 
+            placeholder="e.g. Pallavaram"
+            autocomplete="off"
+            class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-900 text-sm font-medium transition-all"
+          />
+        </div>
+      </div>
+
+      <!-- Drop -->
+      <div>
+        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Drop Location</label>
+        <div class="relative group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Navigation className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
+          </div>
+          <input 
+            type="text" 
+            id="simple-drop" 
+            placeholder="e.g. Madurai"
+            autocomplete="off"
+            class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-900 text-sm font-medium transition-all"
+          />
+        </div>
+      </div>
+
+      <!-- Round Trip Specific Fields -->
+      <div id="round-trip-fields" class="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+        
+        <!-- Duration -->
+        <div>
+          <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Total Duration (Days)</label>
+          <div class="relative group">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Calendar className="w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
+            </div>
+            <input 
+              type="number" 
+              id="duration-days" 
+              value="2"
+              min="1"
+              class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-900 text-sm font-medium transition-all"
+            />
+          </div>
+        </div>
+
+        <!-- Stay Checkbox -->
+        <label class="flex items-start gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:border-indigo-300 transition-colors bg-slate-50/50">
+          <div class="relative flex items-center">
+            <input type="checkbox" id="stay-provided" class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 checked:border-indigo-600 checked:bg-indigo-600 transition-all" />
+            <Check className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 pointer-events-none" />
+          </div>
+          <div>
+            <span class="block text-sm font-semibold text-slate-700">I will provide Driver Stay</span>
+            <span class="block text-xs text-slate-500 mt-0.5">Select this if you give the driver a place to sleep.</span>
+          </div>
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- Calculate Button -->
+    <button id="calc-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:shadow-xl active:scale-[0.98]">
+      Calculate Estimate <ArrowRight className="w-4 h-4 ml-2" />
+    </button>
+
+    <!-- Results Section -->
+    <div id="result-section" class="hidden pt-6 border-t border-slate-100">
+      
+      <div class="flex justify-between items-end mb-6">
+        <div>
+          <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Estimated Total</p>
+          <p class="text-4xl font-extrabold text-slate-900 tracking-tight" id="total-price">₹0</p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-bold text-slate-600" id="distance-display">0 km</p>
+          <p class="text-xs text-slate-400" id="duration-display">0 hrs Driving</p>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-sm" id="breakdown-list">
+        <!-- Dynamic Content -->
+      </div>
+
+      <div class="mt-6 p-3 bg-yellow-50 border border-yellow-100 rounded-lg flex gap-3">
+        <Info className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
+        <p class="text-xs text-yellow-800 leading-relaxed">
+          Rate is per calendar day. Providing accommodation saves you <span class="font-bold">₹500/night!</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script is:inline define:vars={{ tnBusFares }}>
+  (function() {
+    // --- STATE ---
+    let activeTab = 'round'; // 'oneway' | 'round'
+
+    // --- DOM ELEMENTS ---
+    const tabOneway = document.getElementById('tab-oneway');
+    const tabRound = document.getElementById('tab-round');
+    const roundTripFields = document.getElementById('round-trip-fields');
+    const durationInput = document.getElementById('duration-days');
+    const stayCheckbox = document.getElementById('stay-provided');
+    const resultSection = document.getElementById('result-section');
+
+    // --- TAB LOGIC ---
+    function switchTab(tab) {
+      activeTab = tab;
+      if (tab === 'oneway') {
+        // Style Active
+        tabOneway.className = "flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all";
+        tabRound.className = "flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+        // Hide Fields
+        roundTripFields.classList.add('hidden');
+      } else {
+        // Style Active
+        tabRound.className = "flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-indigo-600 shadow-sm transition-all";
+        tabOneway.className = "flex-1 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+        // Show Fields
+        roundTripFields.classList.remove('hidden');
+      }
+      // Hide results on tab switch to avoid confusion
+      resultSection.classList.add('hidden');
+    }
+
+    tabOneway.addEventListener('click', () => switchTab('oneway'));
+    tabRound.addEventListener('click', () => switchTab('round'));
+
+    // --- GOOGLE MAPS INIT (Robust) ---
+    let attempts = 0;
+    const maxAttempts = 50; 
+
+    function initializeAutocomplete() {
+      const pickupInput = document.getElementById('simple-pickup');
+      const dropInput = document.getElementById('simple-drop');
+
+      if (!pickupInput || !dropInput) return;
+      if (pickupInput.dataset.googleAttached === "true") return;
+
+      try {
+        const options = {
+          componentRestrictions: { country: "in" },
+          fields: ["geometry", "name"],
+          strictBounds: false,
+        };
+        new google.maps.places.Autocomplete(pickupInput, options);
+        new google.maps.places.Autocomplete(dropInput, options);
+        pickupInput.dataset.googleAttached = "true";
+        dropInput.dataset.googleAttached = "true";
+        console.log("DriverFeeEstimator: Autocomplete initialized");
+      } catch (e) {
+        console.error("DriverFeeEstimator: Init failed", e);
+      }
+    }
+
+    const intervalId = setInterval(() => {
+      attempts++;
+      if (window.google && window.google.maps && window.google.maps.places) {
+        clearInterval(intervalId);
+        initializeAutocomplete();
+      } else if (attempts >= maxAttempts) {
+        clearInterval(intervalId);
+      }
+    }, 100);
+
+    // --- CALCULATION LOGIC ---
+    const calcBtn = document.getElementById('calc-btn');
+    
+    if (calcBtn) {
+      calcBtn.addEventListener('click', () => {
+        const pickup = document.getElementById('simple-pickup').value;
+        const drop = document.getElementById('simple-drop').value;
+        
+        if(!pickup || !drop) {
+          alert("Please enter both locations");
+          return;
+        }
+
+        // Change button state
+        const originalBtnText = calcBtn.innerHTML;
+        calcBtn.innerHTML = 'Calculating...';
+        calcBtn.disabled = true;
+
+        // 1. TRY LOCAL LOOKUP FIRST (No API)
+        const p = pickup.toLowerCase();
+        const d = drop.toLowerCase();
+        
+        // Find route in either direction
+        const route = tnBusFares.find(r => 
+          (p.includes(r.source) && d.includes(r.destination)) ||
+          (p.includes(r.destination) && d.includes(r.source))
+        );
+
+        if (route) {
+          console.log("Using Local Route Data:", route);
+          
+          // Simulate small delay for UX
+          setTimeout(() => {
+            calcBtn.innerHTML = originalBtnText;
+            calcBtn.disabled = false;
+            
+            const realDist = route.distanceKm;
+            const durationText = Math.round(realDist / 50) + " hrs (Est)"; // Approx 50km/h
+            
+            // Use stored SETC fare
+            const setcFare = route.setcFare; 
+            
+            calculateAndShow(realDist, durationText, setcFare);
+          }, 600);
+          return;
+        }
+
+        // 2. FALLBACK TO API (If route not found)
+        const service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix(
+          {
+            origins: [pickup],
+            destinations: [drop],
+            travelMode: google.maps.TravelMode.DRIVING,
+            unitSystem: google.maps.UnitSystem.METRIC,
+          },
+          (response, status) => {
+            // Reset button
+            calcBtn.innerHTML = originalBtnText;
+            calcBtn.disabled = false;
+
+            if (status !== "OK") {
+              alert("Error with distance service: " + status);
+              return;
+            }
+
+            const result = response.rows[0].elements[0];
+            if (result.status !== "OK") {
+              alert("Could not calculate distance. Please check locations.");
+              return;
+            }
+
+            // Real Data
+            const distanceInMeters = result.distance.value;
+            const realDist = Math.round(distanceInMeters / 1000); 
+            const durationText = result.duration.text;
+            
+            // Fallback Fare Calculation (if not in JSON)
+            // Approx 1.2 per km for SETC Ultra Deluxe
+            const calculatedFare = Math.round(realDist * 1.2);
+
+            calculateAndShow(realDist, durationText, calculatedFare);
+          }
+        );
+      });
+
+      function calculateAndShow(dist, duration, busFare) {
+        // Rates
+        const BATA_PER_DAY = 1000;
+        const FOOD_PER_DAY = 300;
+        const STAY_PER_NIGHT = 500;
+
+        let total = 0;
+        let breakdownHTML = '';
+
+        if (activeTab === 'oneway') {
+          // One Way Logic
+          total = BATA_PER_DAY + FOOD_PER_DAY + busFare;
+
+          breakdownHTML = `
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-slate-600">Driver Bata (1 Day)</span>
+              <span class="font-bold text-slate-900">₹${BATA_PER_DAY}</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-slate-600">Food Allowance</span>
+              <span class="font-bold text-slate-900">₹${FOOD_PER_DAY}</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-slate-600">Return Bus Ticket (SETC/Est)</span>
+              <span class="font-bold text-slate-900">₹${busFare}</span>
+            </div>
+          `;
+
+        } else {
+          // Round Trip Logic
+          const days = parseInt(durationInput.value) || 1;
+          const nights = Math.max(0, days - 1); // Nights are usually Days - 1
+          const provideStay = stayCheckbox.checked;
+
+          const totalBata = BATA_PER_DAY * days;
+          const totalFood = FOOD_PER_DAY * days;
+          const totalStay = provideStay ? 0 : (STAY_PER_NIGHT * nights);
+          
+          total = totalBata + totalFood + totalStay;
+
+          breakdownHTML = `
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-slate-600">Driver Bata (${days} Days)</span>
+              <span class="font-bold text-slate-900">₹${totalBata}</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-slate-600">Food Allowance (${days} Days)</span>
+              <span class="font-bold text-slate-900">₹${totalFood}</span>
+            </div>
+            ${nights > 0 ? `
+            <div class="flex justify-between py-2 ${provideStay ? 'text-slate-400 line-through' : ''}">
+              <span class="text-slate-600">Stay Allowance (${nights} Nights)</span>
+              <span class="font-bold text-slate-900">₹${provideStay ? 0 : totalStay}</span>
+            </div>
+            ` : ''}
+          `;
+        }
+
+        // Update UI
+        document.getElementById('total-price').innerText = `₹${total}`;
+        document.getElementById('distance-display').innerText = `${dist} km`;
+        document.getElementById('duration-display').innerText = duration;
+        document.getElementById('breakdown-list').innerHTML = breakdownHTML;
+        
+        resultSection.classList.remove('hidden');
+      }
+    }
+  })();
+</script>

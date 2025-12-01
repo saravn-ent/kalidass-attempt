@@ -207,7 +207,9 @@ const hero = siteContent.hero;
   // Google Maps Autocomplete Integration
   const initAutocomplete = () => {
     const google = (window as any).google;
-    if (!google || !google.maps || !google.maps.places) return;
+    if (!google || !google.maps || !google.maps.places) {
+        return; // Exit if not ready
+    }
 
     const options = {
       componentRestrictions: { country: 'in' },
@@ -219,22 +221,11 @@ const hero = siteContent.hero;
     if (dropInput) new google.maps.places.Autocomplete(dropInput, options);
   };
 
-  // Expose to window for the callback
-  (window as any).initAutocomplete = initAutocomplete;
-
-  const loadGoogleMaps = () => {
-    if ((window as any).google?.maps?.places) {
-      initAutocomplete();
-      return;
-    }
-    
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBPpRgTPIkv20IMdaBqqdlz0S0FEGU5400&libraries=places&loading=async&callback=initAutocomplete`;
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-  };
-
   // Initialize Google Maps
-  loadGoogleMaps();
+  window.addEventListener('google-maps-loaded', initAutocomplete);
+  
+  // Also run on initial load in case the event was missed
+  if ((window as any).google && (window as any).google.maps) {
+    initAutocomplete();
+  }
 </script>
