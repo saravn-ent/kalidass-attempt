@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import QuotationEngine from '../components/QuotationEngine.jsx';
 import DriverFeeEstimator from '../components/DriverFeeEstimator.astro';
 import VehicleRelocationCalculator from '../components/VehicleRelocationCalculator.jsx';
 ---
@@ -19,13 +20,24 @@ import VehicleRelocationCalculator from '../components/VehicleRelocationCalculat
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        {/* Oneway / Round Trip Calculator */}
+        <div class="w-full flex justify-center">
+          <QuotationEngine 
+            client:load 
+            showAirportTab={false} 
+            showBookingButton={false} 
+            title="Taxi Fare Estimator"
+            variant="card"
+          />
+        </div>
+
         {/* Acting Driver Cost Calculator */}
         <div class="w-full flex justify-center">
           <DriverFeeEstimator />
         </div>
 
         {/* Vehicle Relocation Cost */}
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center lg:col-span-2">
           <VehicleRelocationCalculator client:load />
         </div>
       </div>

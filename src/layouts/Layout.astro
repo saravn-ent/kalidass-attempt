@@ -9,6 +9,9 @@ interface Props {
   schema?: object;
 }
 
+import siteContent from '../data/siteContent.json';
+const services = siteContent.services;
+
 const {
   title = "Kalidass Travels - Premium Travel Experience",
   description = "Premium travel and cab services across South India. Professional drivers, comfortable vehicles, affordable rates.",
@@ -289,26 +292,42 @@ const fullImage = ogImage
           </div>
 
           <!-- Desktop Menu -->
-          <div class="hidden md:flex space-x-8">
-            <a href="#trips" class="header-link">
-              <span class="lang-en">Trips</span>
-              <span class="lang-ta hidden">பயணங்கள்</span>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="header-link">
+              <span class="lang-en">Home</span>
+              <span class="lang-ta hidden">முகப்பு</span>
             </a>
-            <a href="#fleet" class="header-link">
+            <a href="/#fleet" class="header-link">
               <span class="lang-en">Fleet</span>
               <span class="lang-ta hidden">வாகனங்கள்</span>
             </a>
-            <a href="#services" class="header-link">
-              <span class="lang-en">Services</span>
-              <span class="lang-ta hidden">சேவைகள்</span>
+            <a href="/drivers" class="header-link">
+              <span class="lang-en">Drivers</span>
+              <span class="lang-ta hidden">ஓட்டுநர்கள்</span>
             </a>
+            
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button class="header-link flex items-center gap-1 focus:outline-none py-4">
+                <span class="lang-en">Services</span>
+                <span class="lang-ta hidden">சேவைகள்</span>
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute left-0 top-full w-64 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 border border-gray-100 overflow-hidden">
+                <div class="py-2">
+                  {services.map((service) => (
+                    <a href={service.link} class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 border-b border-gray-50 last:border-0">
+                      <span class="lang-en font-medium">{service.title}</span>
+                      <span class="lang-ta hidden font-medium">{service.title_ta}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <a href="/calculator" class="header-link">
               <span class="lang-en">Calculator</span>
               <span class="lang-ta hidden">கால்குலேட்டர்</span>
-            </a>
-            <a href="#contact" class="header-link">
-              <span class="lang-en">Contact</span>
-              <span class="lang-ta hidden">தொடர்புக்கு</span>
             </a>
           </div>
 
@@ -413,18 +432,18 @@ const fullImage = ogImage
           <span class="lang-ta hidden">முகப்பு</span>
         </a>
         <a
-          href="/#trips"
-          class="block text-base font-medium text-gray-800 hover:text-red-600 border-b border-gray-100 pb-2 transition-colors"
-        >
-          <span class="lang-en">Trips</span>
-          <span class="lang-ta hidden">பயணங்கள்</span>
-        </a>
-        <a
           href="/#fleet"
           class="block text-base font-medium text-gray-800 hover:text-red-600 border-b border-gray-100 pb-2 transition-colors"
         >
           <span class="lang-en">Fleet</span>
           <span class="lang-ta hidden">வாகனங்கள்</span>
+        </a>
+        <a
+          href="/drivers"
+          class="block text-base font-medium text-gray-800 hover:text-red-600 border-b border-gray-100 pb-2 transition-colors"
+        >
+          <span class="lang-en">Drivers</span>
+          <span class="lang-ta hidden">ஓட்டுநர்கள்</span>
         </a>
         <a
           href="/calculator"
@@ -497,14 +516,6 @@ const fullImage = ogImage
             </a>
           </div>
         </div>
-
-        <a
-          href="/#contact"
-          class="block text-base font-medium text-gray-800 hover:text-red-600 border-b border-gray-100 pb-2 transition-colors"
-        >
-          <span class="lang-en">Contact</span>
-          <span class="lang-ta hidden">தொடர்புக்கு</span>
-        </a>
 
         <!-- Proprietor Card -->
         <div class="pt-6 pb-4 text-center">

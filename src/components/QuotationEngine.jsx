@@ -11,7 +11,7 @@ const rates = {
 
 const vehicleOptions = Object.keys(rates);
 
-export default function QuotationEngine() {
+export default function QuotationEngine({ showAirportTab = true, showBookingButton = true, title = "Book Your Ride", variant = "default" }) {
   const [activeTab, setActiveTab] = useState('oneway'); // airport, oneway, round
   const [airportMode, setAirportMode] = useState('drop'); // drop (to airport), pickup (from airport)
   const [vehicle, setVehicle] = useState('Swift Dzire');
@@ -205,10 +205,210 @@ _Please confirm availability._`;
     window.open(`https://wa.me/919092303060?text=${encodedMessage}`, '_blank');
   };
 
+  if (variant === 'card') {
+    return (
+      <div className="w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden font-sans">
+        {/* Header matching DriverFeeEstimator */}
+        <div className="p-6 pb-2">
+          <div className="flex flex-col items-center text-center gap-2 mb-1">
+            <Car className="w-10 h-10 text-indigo-600" />
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">
+                {title}
+              </h2>
+              <p className="text-xs text-slate-500">
+                Get Instant Quote
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Tabs - Card Style */}
+        <div className="px-6 mb-6">
+          <div className="bg-slate-100 p-1 rounded-xl flex">
+            <button
+              onClick={() => setActiveTab('oneway')}
+              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                activeTab === 'oneway'
+                  ? 'bg-white text-indigo-600 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <ArrowRight className="w-4 h-4" />
+              <span>One Way</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('round')}
+              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                activeTab === 'round'
+                  ? 'bg-white text-indigo-600 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Repeat className="w-4 h-4" />
+              <span>Round Trip</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="px-6 pb-8 space-y-5">
+          {/* Content */}
+          <div className="space-y-4">
+             {/* Pickup - Full Width */}
+            <div className="relative group">
+              <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Pickup Location</label>
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+                <MapPin className="text-indigo-500 mr-3 w-5 h-5" />
+                <input
+                  ref={pickupInputRef}
+                  type="text"
+                  value={pickup}
+                  onChange={(e) => setPickup(e.target.value)}
+                  placeholder="Enter City / Area"
+                  className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium placeholder:text-slate-400"
+                />
+              </div>
+            </div>
+
+            {/* Drop - Full Width */}
+            <div className="relative group">
+              <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Drop Location</label>
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+                <MapPin className="text-slate-400 mr-3 w-5 h-5" />
+                <input
+                  ref={dropInputRef}
+                  type="text"
+                  value={drop}
+                  onChange={(e) => setDrop(e.target.value)}
+                  placeholder="Enter Destination"
+                  className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium placeholder:text-slate-400"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {/* Passengers */}
+              <div className="relative group">
+                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Passengers</label>
+                <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+                  <Users className="text-indigo-500 mr-3 w-5 h-5" />
+                  <select
+                    value={passengers}
+                    onChange={(e) => setPassengers(e.target.value)}
+                    className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium appearance-none cursor-pointer"
+                  >
+                    <option value="4">4+ Driver</option>
+                    <option value="6">6+ Driver</option>
+                    <option value="7">7+ Driver</option>
+                    <option value="12">12+ Driver</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Vehicle */}
+              <div className="relative group">
+                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Vehicle</label>
+                <div className="flex items-center bg-slate-100 border border-slate-200 rounded-xl px-4 py-3">
+                  <Car className="text-slate-500 mr-3 w-5 h-5" />
+                  <select
+                    value={vehicle}
+                    disabled
+                    className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium appearance-none cursor-not-allowed"
+                  >
+                    {vehicleOptions.map((v) => (
+                      <option key={v} value={v}>
+                        {v}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {activeTab === 'round' && (
+              <div className="relative group">
+                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1.5">Days</label>
+                <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+                  <Calendar className="text-indigo-500 mr-3 w-5 h-5" />
+                  <input
+                    type="number"
+                    min="1"
+                    value={days}
+                    onChange={(e) => setDays(parseInt(e.target.value) || 1)}
+                    className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Calculate Button */}
+          <button 
+            className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:shadow-xl active:scale-[0.98]"
+            onClick={() => {
+               // Just scroll to result if needed, or do nothing as it's reactive
+               // But user asked for a button.
+            }}
+          >
+            <span className="flex items-center">Calculate Cost <ArrowRight className="w-4 h-4 ml-2" /></span>
+          </button>
+
+          {/* Distance Info */}
+          {distance && (
+            <div className="flex flex-row justify-between text-xs text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100">
+              <div>
+                <span className="block text-[10px] text-slate-400 uppercase font-bold">Distance</span>
+                <strong className="text-slate-900">{distance.toFixed(1)} km</strong>
+              </div>
+              {activeTab === 'round' && (
+                <div>
+                  <span className="block text-[10px] text-slate-400 uppercase font-bold">Round Trip</span>
+                  <strong className="text-indigo-600">{(distance * 2).toFixed(1)} km</strong>
+                </div>
+              )}
+              <div className="text-right">
+                <span className="block text-[10px] text-slate-400 uppercase font-bold">Duration</span>
+                <strong className="text-slate-900">{duration}</strong>
+              </div>
+            </div>
+          )}
+
+          {/* Estimate */}
+          {estimate > 0 && (
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 flex flex-col gap-2 border border-green-100">
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="text-xs text-green-700 font-bold uppercase">Total Estimate</p>
+                  <div className="flex items-baseline gap-1">
+                    {loading ? (
+                      <span className="text-lg text-slate-400 animate-pulse">...</span>
+                    ) : (
+                      <p className="text-3xl font-black text-slate-800 leading-none">
+                        ₹ {estimate > 0 ? estimate.toLocaleString() : '0'}
+                      </p>
+                    )}
+                  </div>
+                  <p className="text-[10px] text-slate-500 mt-1">*Excludes Tolls/Parking</p>
+                </div>
+                
+                {estimate > 0 && (
+                   <div className="text-[10px] text-right text-slate-500">
+                      <div>Rate: ₹{rates[vehicle]}/km</div>
+                      {activeTab === 'round' && <div>+ Bata: ₹{days * 300}</div>}
+                   </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-xl shadow-xl p-0 border-t-4 border-red-600 overflow-hidden">
       <h2 className="text-lg font-bold text-center text-gray-800 py-2 border-b border-gray-100">
-        Book Your Ride
+        {title}
       </h2>
       
       {/* Tabs - Compact */}
@@ -235,17 +435,19 @@ _Please confirm availability._`;
           <Repeat className="w-3 h-3" />
           <span>Round Trip</span>
         </button>
-        <button
-          onClick={() => setActiveTab('airport')}
-          className={`flex-1 py-2 text-xs text-center font-bold tracking-wide uppercase transition flex items-center justify-center gap-1 ${
-            activeTab === 'airport'
-              ? 'text-red-600 border-b-2 border-red-600 bg-red-50'
-              : 'text-gray-500 hover:text-red-600'
-          }`}
-        >
-          <Plane className="w-3 h-3" />
-          <span>Airport</span>
-        </button>
+        {showAirportTab && (
+          <button
+            onClick={() => setActiveTab('airport')}
+            className={`flex-1 py-2 text-xs text-center font-bold tracking-wide uppercase transition flex items-center justify-center gap-1 ${
+              activeTab === 'airport'
+                ? 'text-red-600 border-b-2 border-red-600 bg-red-50'
+                : 'text-gray-500 hover:text-red-600'
+            }`}
+          >
+            <Plane className="w-3 h-3" />
+            <span>Airport</span>
+          </button>
+        )}
       </div>
 
       <div className="p-4 space-y-3">
@@ -452,18 +654,20 @@ _Please confirm availability._`;
             )}
           </div>
           
-          <button
-            onClick={handleWhatsApp}
-            disabled={estimate === 0}
-            className={`w-full py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-transform shadow-sm ${
-              estimate > 0 
-                ? 'bg-[#25D366] hover:bg-[#20bd5a] text-white active:scale-95' 
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-            }`}
-          >
-            <Send className="w-4 h-4" />
-            Book on WhatsApp
-          </button>
+          {showBookingButton && (
+            <button
+              onClick={handleWhatsApp}
+              disabled={estimate === 0}
+              className={`w-full py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-transform shadow-sm ${
+                estimate > 0 
+                  ? 'bg-[#25D366] hover:bg-[#20bd5a] text-white active:scale-95' 
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              }`}
+            >
+              <Send className="w-4 h-4" />
+              Book on WhatsApp
+            </button>
+          )}
         </div>
       </div>
     </div>
