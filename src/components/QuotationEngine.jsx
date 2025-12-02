@@ -428,10 +428,10 @@ _Please confirm availability._`;
         )}
 
         {/* Estimate - Compact */}
-        <div className="bg-red-50 rounded-lg p-3 flex flex-col gap-2 border border-red-100">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 flex flex-col gap-2 border border-green-100">
           <div className="flex justify-between items-end">
             <div>
-              <p className="text-xs text-red-600 font-bold uppercase">Total Estimate</p>
+              <p className="text-xs text-green-700 font-bold uppercase">Total Estimate</p>
               <div className="flex items-baseline gap-1">
                 {loading ? (
                   <span className="text-lg text-gray-400 animate-pulse">...</span>
