@@ -28,6 +28,7 @@ export default function QuotationEngine({ showAirportTab = true, showBookingButt
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
+  const [showResult, setShowResult] = useState(false);
 
   const pickupInputRef = useRef(null);
   const dropInputRef = useRef(null);
@@ -39,6 +40,7 @@ export default function QuotationEngine({ showAirportTab = true, showBookingButt
     else if (pax <= 6) setVehicle('Innova');
     else if (pax <= 7) setVehicle('Innova Crysta');
     else setVehicle('Tempo Traveller');
+    setShowResult(false);
   }, [passengers]);
 
   // Initialize Google Maps Autocomplete
@@ -58,6 +60,7 @@ export default function QuotationEngine({ showAirportTab = true, showBookingButt
           if (place.formatted_address) {
             setPickup(place.formatted_address);
             calculateDistance(place.formatted_address, drop);
+            setShowResult(false);
           }
         });
       }
@@ -69,6 +72,7 @@ export default function QuotationEngine({ showAirportTab = true, showBookingButt
           if (place.formatted_address) {
             setDrop(place.formatted_address);
             calculateDistance(pickup, place.formatted_address);
+            setShowResult(false);
           }
         });
       }
@@ -227,7 +231,7 @@ _Please confirm availability._`;
         <div className="px-6 mb-6">
           <div className="bg-slate-100 p-1 rounded-xl flex">
             <button
-              onClick={() => setActiveTab('oneway')}
+              onClick={() => { setActiveTab('oneway'); setShowResult(false); }}
               className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
                 activeTab === 'oneway'
                   ? 'bg-white text-indigo-600 shadow-sm'
@@ -238,7 +242,7 @@ _Please confirm availability._`;
               <span>One Way</span>
             </button>
             <button
-              onClick={() => setActiveTab('round')}
+              onClick={() => { setActiveTab('round'); setShowResult(false); }}
               className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
                 activeTab === 'round'
                   ? 'bg-white text-indigo-600 shadow-sm'
@@ -263,7 +267,7 @@ _Please confirm availability._`;
                   ref={pickupInputRef}
                   type="text"
                   value={pickup}
-                  onChange={(e) => setPickup(e.target.value)}
+                  onChange={(e) => { setPickup(e.target.value); setShowResult(false); }}
                   placeholder="Enter City / Area"
                   className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium placeholder:text-slate-400"
                 />
@@ -279,7 +283,7 @@ _Please confirm availability._`;
                   ref={dropInputRef}
                   type="text"
                   value={drop}
-                  onChange={(e) => setDrop(e.target.value)}
+                  onChange={(e) => { setDrop(e.target.value); setShowResult(false); }}
                   placeholder="Enter Destination"
                   className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium placeholder:text-slate-400"
                 />
@@ -294,7 +298,7 @@ _Please confirm availability._`;
                   <Users className="text-indigo-500 mr-3 w-5 h-5" />
                   <select
                     value={passengers}
-                    onChange={(e) => setPassengers(e.target.value)}
+                    onChange={(e) => { setPassengers(e.target.value); setShowResult(false); }}
                     className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium appearance-none cursor-pointer"
                   >
                     <option value="4">4+ Driver</option>
@@ -334,7 +338,7 @@ _Please confirm availability._`;
                     type="number"
                     min="1"
                     value={days}
-                    onChange={(e) => setDays(parseInt(e.target.value) || 1)}
+                    onChange={(e) => { setDays(parseInt(e.target.value) || 1); setShowResult(false); }}
                     className="bg-transparent w-full outline-none text-sm text-slate-700 font-medium"
                   />
                 </div>
@@ -346,15 +350,14 @@ _Please confirm availability._`;
           <button 
             className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:shadow-xl active:scale-[0.98]"
             onClick={() => {
-               // Just scroll to result if needed, or do nothing as it's reactive
-               // But user asked for a button.
+               setShowResult(true);
             }}
           >
             <span className="flex items-center">Calculate Cost <ArrowRight className="w-4 h-4 ml-2" /></span>
           </button>
 
           {/* Distance Info */}
-          {distance && (
+          {distance && showResult && (
             <div className="flex flex-row justify-between text-xs text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100">
               <div>
                 <span className="block text-[10px] text-slate-400 uppercase font-bold">Distance</span>
@@ -374,7 +377,7 @@ _Please confirm availability._`;
           )}
 
           {/* Estimate */}
-          {estimate > 0 && (
+          {estimate > 0 && showResult && (
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 flex flex-col gap-2 border border-green-100">
               <div className="flex justify-between items-end">
                 <div>

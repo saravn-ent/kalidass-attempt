@@ -10,6 +10,7 @@ interface Props {
 }
 
 import siteContent from '../data/siteContent.json';
+import { pwaInfo } from 'virtual:pwa-info';
 const services = siteContent.services;
 
 const {
@@ -59,6 +60,8 @@ const fullImage = ogImage
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
+    <script src="/src/pwa.ts"></script>
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 
     <!-- Fonts: Noto Sans (English) & Noto Sans Tamil (Tamil) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
