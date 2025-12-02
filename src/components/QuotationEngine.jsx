@@ -12,7 +12,7 @@ const rates = {
 const vehicleOptions = Object.keys(rates);
 
 export default function QuotationEngine() {
-  const [activeTab, setActiveTab] = useState('airport'); // airport, oneway, round
+  const [activeTab, setActiveTab] = useState('oneway'); // airport, oneway, round
   const [airportMode, setAirportMode] = useState('drop'); // drop (to airport), pickup (from airport)
   const [vehicle, setVehicle] = useState('Swift Dzire');
   const [passengers, setPassengers] = useState('4');
@@ -133,6 +133,23 @@ export default function QuotationEngine() {
     }
   }, [distance, vehicle, activeTab, days]);
 
+  // Auto-fill Airport Location
+  useEffect(() => {
+    if (activeTab === 'airport') {
+      if (airportMode === 'drop') {
+        setDrop('Chennai International Airport (MAA)');
+        if (pickup === 'Chennai International Airport (MAA)') setPickup('');
+      } else {
+        setPickup('Chennai International Airport (MAA)');
+        if (drop === 'Chennai International Airport (MAA)') setDrop('');
+      }
+    } else {
+      // Clear Airport if switching to One Way / Round Trip
+      if (drop === 'Chennai International Airport (MAA)') setDrop('');
+      if (pickup === 'Chennai International Airport (MAA)') setPickup('');
+    }
+  }, [activeTab, airportMode]);
+
   const handleWhatsApp = async () => {
     // 1. Send Data to Google Sheet (Fire and Forget)
     const bookingData = {
@@ -153,11 +170,11 @@ export default function QuotationEngine() {
       // Replace with your deployed Google Apps Script Web App URL
       // We use no-cors because Google Scripts don't support CORS for simple POSTs easily, 
       // but the data still gets sent.
-      fetch('https://script.google.com/macros/s/AKfycbyPItV0OOO1d0pBCzN_Mzw4F-qfdf4xO1cU0s78hdHZkRTsuheEwar-d-Fc4-_HfDviSw/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwoEpKqa3Qg-DIvMe06pGUgGLlC_0vJQev61nzIh9ssh1-uHZ5VtYkGzpMVwhEyi7tvEQ/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         body: JSON.stringify(bookingData)
       });
@@ -197,17 +214,6 @@ _Please confirm availability._`;
       {/* Tabs - Compact */}
       <div className="flex border-b border-gray-100">
         <button
-          onClick={() => setActiveTab('airport')}
-          className={`flex-1 py-2 text-xs text-center font-bold tracking-wide uppercase transition flex items-center justify-center gap-1 ${
-            activeTab === 'airport'
-              ? 'text-red-600 border-b-2 border-red-600 bg-red-50'
-              : 'text-gray-500 hover:text-red-600'
-          }`}
-        >
-          <Plane className="w-3 h-3" />
-          <span>Airport</span>
-        </button>
-        <button
           onClick={() => setActiveTab('oneway')}
           className={`flex-1 py-2 text-xs text-center font-bold tracking-wide uppercase transition flex items-center justify-center gap-1 ${
             activeTab === 'oneway'
@@ -228,6 +234,17 @@ _Please confirm availability._`;
         >
           <Repeat className="w-3 h-3" />
           <span>Round Trip</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('airport')}
+          className={`flex-1 py-2 text-xs text-center font-bold tracking-wide uppercase transition flex items-center justify-center gap-1 ${
+            activeTab === 'airport'
+              ? 'text-red-600 border-b-2 border-red-600 bg-red-50'
+              : 'text-gray-500 hover:text-red-600'
+          }`}
+        >
+          <Plane className="w-3 h-3" />
+          <span>Airport</span>
         </button>
       </div>
 
