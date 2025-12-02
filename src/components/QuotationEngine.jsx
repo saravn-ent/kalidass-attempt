@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Car, MapPin, Calendar, Calculator, Send, Plane, ArrowRight, Repeat, Users } from 'lucide-react';
+import { Car, MapPin, Calendar, Calculator, Send, Plane, ArrowRight, Repeat, Users, User, Phone } from 'lucide-react';
 
 const rates = {
   'Swift Dzire': 11,
@@ -23,6 +23,11 @@ export default function QuotationEngine() {
   const [estimate, setEstimate] = useState(0);
   const [loading, setLoading] = useState(false);
   const [days, setDays] = useState(1); // For round trip calculation
+  
+  // Customer Details
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
 
   const pickupInputRef = useRef(null);
   const dropInputRef = useRef(null);
@@ -35,19 +40,6 @@ export default function QuotationEngine() {
     else if (pax <= 7) setVehicle('Innova Crysta');
     else setVehicle('Tempo Traveller');
   }, [passengers]);
-
-  // Airport Logic: Handle Mode Switching
-  useEffect(() => {
-    if (activeTab === 'airport') {
-      if (airportMode === 'drop') {
-        setDrop('Chennai International Airport (MAA)');
-        if (pickup === 'Chennai International Airport (MAA)') setPickup('');
-      } else {
-        setPickup('Chennai International Airport (MAA)');
-        if (drop === 'Chennai International Airport (MAA)') setDrop('');
-      }
-    }
-  }, [activeTab, airportMode]);
 
   // Initialize Google Maps Autocomplete
   useEffect(() => {
@@ -65,20 +57,7 @@ export default function QuotationEngine() {
           const place = pickupAutocomplete.getPlace();
           if (place.formatted_address) {
             setPickup(place.formatted_address);
-            
-            if (activeTab === 'airport') {
-               // If mode is drop (To Airport), pickup is user location. Drop is already Airport.
-               if (airportMode === 'drop') {
-                   calculateDistance(place.formatted_address, 'Chennai International Airport (MAA)');
-               } else {
-                   // Mode is pickup (From Airport). Pickup is Airport. User just changed pickup?
-                   // If user manually changes pickup in 'pickup' mode, maybe they want to go TO airport?
-                   // Let's stick to the mode.
-                   calculateDistance(place.formatted_address, drop);
-               }
-            } else {
-                calculateDistance(place.formatted_address, drop);
-            }
+            calculateDistance(place.formatted_address, drop);
           }
         });
       }
@@ -89,16 +68,7 @@ export default function QuotationEngine() {
           const place = dropAutocomplete.getPlace();
           if (place.formatted_address) {
             setDrop(place.formatted_address);
-            
-            if (activeTab === 'airport') {
-                if (airportMode === 'pickup') {
-                    calculateDistance('Chennai International Airport (MAA)', place.formatted_address);
-                } else {
-                    calculateDistance(pickup, place.formatted_address);
-                }
-            } else {
-                calculateDistance(pickup, place.formatted_address);
-            }
+            calculateDistance(pickup, place.formatted_address);
           }
         });
       }
@@ -163,15 +133,50 @@ export default function QuotationEngine() {
     }
   }, [distance, vehicle, activeTab, days]);
 
-  const handleWhatsApp = () => {
+  const handleWhatsApp = async () => {
+    // 1. Send Data to Google Sheet (Fire and Forget)
+    const bookingData = {
+      date: new Date().toLocaleString(),
+      tripType: activeTab,
+      name: name || 'Anonymous',
+      phone: phone || 'Not Provided',
+      pickup,
+      drop,
+      vehicle,
+      passengers,
+      distance: distance ? distance.toFixed(1) : '',
+      estimate,
+      travelDate: date
+    };
+
+    try {
+      // Replace with your deployed Google Apps Script Web App URL
+      // We use no-cors because Google Scripts don't support CORS for simple POSTs easily, 
+      // but the data still gets sent.
+      fetch('https://script.google.com/macros/s/AKfycbyPItV0OOO1d0pBCzN_Mzw4F-qfdf4xO1cU0s78hdHZkRTsuheEwar-d-Fc4-_HfDviSw/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData)
+      });
+    } catch (e) {
+      console.error("Error logging to sheet", e);
+    }
+
+    // 2. Open WhatsApp
     const message = `*New Booking Request*
     
+*Customer:* ${name}
+*Phone:* ${phone}
 *Trip Details:*
 🚗 Type: ${activeTab === 'airport' ? 'Airport Transfer' : activeTab === 'round' ? 'Round Trip' : 'One Way'}
 🚙 Vehicle: ${vehicle}
 👥 Passengers: ${passengers}
 📍 Pickup: ${pickup}
 📍 Drop: ${drop}
+📅 Date: ${date ? new Date(date).toLocaleString() : 'Not Specified'}
 📏 Distance: ${distance ? distance.toFixed(1) : 'N/A'} km ${activeTab === 'round' ? `(Round Trip: ${(distance * 2).toFixed(1)} km)` : ''}
 ⏱️ Duration: ${duration || 'N/A'}
 ${activeTab === 'round' ? `📅 Days: ${days}` : ''}
@@ -266,7 +271,6 @@ _Please confirm availability._`;
                 onChange={(e) => setPickup(e.target.value)}
                 placeholder="Enter City / Area"
                 className="bg-transparent w-full outline-none text-sm text-gray-700 font-medium"
-                disabled={activeTab === 'airport' && airportMode === 'pickup'} // Lock pickup if From Airport
               />
             </div>
           </div>
@@ -283,7 +287,6 @@ _Please confirm availability._`;
                 onChange={(e) => setDrop(e.target.value)}
                 placeholder="Enter Destination"
                 className="bg-transparent w-full outline-none text-sm text-gray-700 font-medium"
-                disabled={activeTab === 'airport' && airportMode === 'drop'} // Lock drop if To Airport
               />
             </div>
           </div>
@@ -349,7 +352,39 @@ _Please confirm availability._`;
               <Calendar className="text-red-500 mr-2 w-4 h-4" />
               <input
                 type="datetime-local"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
                 className="bg-transparent w-full outline-none text-sm text-gray-700 font-medium cursor-pointer"
+              />
+            </div>
+          </div>
+
+          {/* Name - Half Width */}
+          <div className="col-span-1 relative group">
+            <label className="text-[10px] font-bold text-gray-500 uppercase mb-0.5 block">Name</label>
+            <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus-within:ring-1 ring-red-500 transition">
+              <User className="text-gray-400 mr-2 w-4 h-4" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your Name"
+                className="bg-transparent w-full outline-none text-sm text-gray-700 font-medium"
+              />
+            </div>
+          </div>
+
+          {/* Phone - Half Width */}
+          <div className="col-span-1 relative group">
+            <label className="text-[10px] font-bold text-gray-500 uppercase mb-0.5 block">Phone</label>
+            <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus-within:ring-1 ring-red-500 transition">
+              <Phone className="text-gray-400 mr-2 w-4 h-4" />
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Mobile Number"
+                className="bg-transparent w-full outline-none text-sm text-gray-700 font-medium"
               />
             </div>
           </div>
