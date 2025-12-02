@@ -21,7 +21,7 @@ const services = siteContent.services;
     <!-- Services Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       {services.map((service) => (
-        <a href={service.link} class="group relative h-60 sm:h-80 rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer block">
+        <a href={service.link} class="group relative h-56 sm:h-80 rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer block">
           <!-- Background Image -->
           <img 
             src={service.image} 
@@ -34,17 +34,17 @@ const services = siteContent.services;
 
           <!-- Content -->
           <div class="absolute inset-0 flex flex-col justify-end p-3 sm:p-6">
-            <h3 class="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 leading-tight drop-shadow-md">
+            <h3 class="text-lg sm:text-2xl font-bold text-white mb-1 sm:mb-2 leading-tight drop-shadow-md">
               <span class="lang-en">{service.title}</span>
               <span class="lang-ta">{service.title_ta}</span>
             </h3>
-            <p class="text-gray-200 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3 mb-3">
+            <p class="text-gray-200 text-[10px] sm:text-sm line-clamp-2 sm:line-clamp-3 mb-2 sm:mb-3">
               <span class="lang-en">{service.description}</span>
               <span class="lang-ta">{service.description_ta}</span>
             </p>
-            <div class="flex items-center text-blue-400 text-xs font-bold uppercase tracking-wider">
-              <span class="lang-en mr-2">Explore</span>
-              <span class="lang-ta mr-2">விவரங்கள்</span>
+            <div class="flex items-center text-blue-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+              <span class="lang-en mr-1 sm:mr-2">Explore</span>
+              <span class="lang-ta mr-1 sm:mr-2">விவரங்கள்</span>
               <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
             </div>
           </div>
