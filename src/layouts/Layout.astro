@@ -103,11 +103,11 @@ const localBusinessSchema = {
     <script src="/src/pwa.ts"></script>
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 
-    <!-- Fonts: Noto Sans (English) & Noto Sans Tamil (Tamil) -->
+    <!-- Fonts: Noto Sans (English), Hind Madurai (Tamil Body), Mukta Malar (Tamil Headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&family=Hind+Madurai:wght@300;400;500;600;700&family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -134,17 +134,31 @@ const localBusinessSchema = {
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(schema || localBusinessSchema)} />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+
     <style is:global>
+      html {
+        font-family: 'Noto Sans', sans-serif;
+        scroll-behavior: smooth;
+      }
+
       /* Language Toggle Styles */
       body.lang-ta .lang-en { display: none !important; }
       body:not(.lang-ta) .lang-ta { display: none !important; }
+
+      /* Tamil Font Overrides */
+      body.lang-ta {
+        font-family: 'Hind Madurai', sans-serif;
+      }
+      
+      body.lang-ta h1, 
+      body.lang-ta h2, 
+      body.lang-ta h3, 
+      body.lang-ta h4, 
+      body.lang-ta h5, 
+      body.lang-ta h6,
+      body.lang-ta .font-heading {
+        font-family: 'Mukta Malar', sans-serif;
+      }
     </style>
     <link
       rel="stylesheet"

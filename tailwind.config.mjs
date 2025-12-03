@@ -8,7 +8,9 @@ export default {
         'android-dark': '#3367D6',
       },
       fontFamily: {
-        sans: ['"Noto Sans"', '"Noto Sans Tamil"', 'sans-serif'],
+        sans: ['"Noto Sans"', 'sans-serif'],
+        'tamil-body': ['"Hind Madurai"', 'sans-serif'],
+        'tamil-heading': ['"Mukta Malar"', 'sans-serif'],
       },
     },
   },
