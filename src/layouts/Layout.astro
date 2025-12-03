@@ -146,8 +146,9 @@ const localBusinessSchema = {
       body:not(.lang-ta) .lang-ta { display: none !important; }
 
       /* Tamil Font Overrides */
-      body.lang-ta {
-        font-family: 'Hind Madurai', sans-serif;
+      body.lang-ta,
+      body.lang-ta .font-sans {
+        font-family: 'Hind Madurai', sans-serif !important;
       }
       
       body.lang-ta h1, 
@@ -157,7 +158,7 @@ const localBusinessSchema = {
       body.lang-ta h5, 
       body.lang-ta h6,
       body.lang-ta .font-heading {
-        font-family: 'Mukta Malar', sans-serif;
+        font-family: 'Mukta Malar', sans-serif !important;
       }
     </style>
     <link
