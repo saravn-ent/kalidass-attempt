@@ -31,6 +31,45 @@ const fullImage = ogImage
   : image.startsWith("http")
     ? image
     : `${siteUrl}${image}`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "Kalidass Travels",
+  "image": "https://kalidasstravels.in/images/logo.png",
+  "description": description,
+  "telephone": "+919952749408",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chennai",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "13.0827",
+    "longitude": "80.2707"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Chennai"
+  },
+  "priceRange": "₹₹",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+};
 ---
 
 <!doctype html>
@@ -56,10 +95,11 @@ const fullImage = ogImage
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPpRgTPIkv20IMdaBqqdlz0S0FEGU5400&libraries=places&callback=initGoogleMaps" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#4f46e5" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
+    <link rel="manifest" href="/manifest.json" />
     <script src="/src/pwa.ts"></script>
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 
@@ -92,11 +132,7 @@ const fullImage = ogImage
     <meta property="twitter:image" content={fullImage} />
 
     <!-- Schema.org JSON-LD -->
-    {
-      schema && (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-      )
-    }
+    <script type="application/ld+json" set:html={JSON.stringify(schema || localBusinessSchema)} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -601,7 +637,7 @@ const fullImage = ogImage
 
       <!-- Floating Action Buttons -->
       <!-- Android Style Call Button -->
-      <a href="tel:+919092303060" class="fixed bottom-6 right-6 z-50 group">
+      <a href="tel:+919092303060" class="fixed bottom-6 right-6 z-50 group" aria-label="Call Kalidass Travels">
         <div
           class="absolute inset-0 bg-[#4285F4] rounded-full animate-ping opacity-75"
         >
