@@ -118,7 +118,7 @@ export default function ExecutiveFleet() {
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
         doc.text('No. 4/220, E88, Ponniamman Kovil Street, Annamalai Nagar,', 105, 27, { align: 'center' });
-        doc.text('Medavakkam, Chennai - 600 001.', 105, 32, { align: 'center' });
+        doc.text('Medavakkam, Chennai - 600 100.', 105, 32, { align: 'center' });
         doc.text('GSTIN: 33COVPM0531D1Z4', 105, 37, { align: 'center' });
         doc.text('Phone: +91 90923 03060 | Email: bookings@kalidasstravels.in', 105, 42, { align: 'center' });
 
